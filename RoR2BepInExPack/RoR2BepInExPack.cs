@@ -19,8 +19,13 @@ public class RoR2BepInExPack : BaseUnityPlugin
         RoR2Application.isModded = true;
 
         InitHooks();
+        ModListSystem.ModListMain.Init();
     }
 
+    private void Start()
+    {
+        ModListSystem.ModListMain.SetupDictionary();
+    }
     private void InitHooks()
     {
         ILLine.Init();
