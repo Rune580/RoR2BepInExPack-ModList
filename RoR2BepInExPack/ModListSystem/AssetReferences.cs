@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using RoR2.UI;
@@ -47,8 +48,8 @@ internal static class AssetReferences
 
     private static void LoadPrefabs()
     {
-        using var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("RoR2BepInExPack.modlistassets");
-        var bundle = AssetBundle.LoadFromStream(assetStream);
+        var assemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        var bundle = AssetBundle.LoadFromFile($"{assemblyLocation}/modlistsystem-assets");
 
         SplitButton = bundle.LoadAndResolvePrefab("SplitButton.prefab");
     }

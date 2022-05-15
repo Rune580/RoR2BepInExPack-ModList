@@ -5,10 +5,7 @@
     <LangVersion>preview</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <EmbeddedResource Include="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" LogicalName="RoR2BepInExPack.modlistassets" />
-  </ItemGroup>  
+    
   <ItemGroup>
     <PackageReference Include="Microsoft.Unity.Analyzers" Version="*">
       <PrivateAssets>all</PrivateAssets>
@@ -25,5 +22,9 @@
 	  <NoWarn>NU1701</NoWarn>
 	</PackageReference>
   </ItemGroup>
+    
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" DestinationFolder="$(OutputPath)"/>
+  </Target>
 
 </Project>
