@@ -24,7 +24,7 @@ public static class ModListMain
     private static Dictionary<string, ModDataInfo> guidToModDataInfo = new Dictionary<string, ModDataInfo>();
     internal static void Init()
     {
-
+        AssetReferences.Init();
     }
 
     internal static void SetupDictionary()
