@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1062496096691773214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2127279155, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: texUIHighlightBoxOutlineThick
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 4974732032781040910}
   - component: {fileID: 6999764128584325626}
   - component: {fileID: 2686642202855502775}
+  - component: {fileID: 8769039235055387133}
   - component: {fileID: 3315862105971933334}
   - component: {fileID: 3315862105971933335}
   m_Layer: 5
@@ -165,12 +166,12 @@ RectTransform:
   - {fileID: 5850476020841015600}
   - {fileID: 2735308182429397626}
   m_Father: {fileID: 8948337101613705529}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 48}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6600792462760758095
 CanvasRenderer:
@@ -213,7 +214,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -308,9 +309,9 @@ MonoBehaviour:
       m_Calls: []
   defaultFallbackButton: 0
   showImageOnHover: 1
-  imageOnHover: {fileID: 0}
+  imageOnHover: {fileID: 3255683839647054922}
   imageOnInteractable: {fileID: 0}
-  updateTextOnHover: 1
+  updateTextOnHover: 0
   hoverLanguageTextMeshController: {fileID: 0}
   hoverToken: TITLE_MODS_DESC
   uiClickSoundOverride: 
@@ -345,6 +346,26 @@ MonoBehaviour:
   useRecommendedMaterial: 1
   useRecommendedAlignment: 0
   useRecommendedLabel: 1
+--- !u!114 &8769039235055387133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315862105971933333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 160
+  m_MinHeight: 48
+  m_PreferredWidth: 160
+  m_PreferredHeight: 48
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &3315862105971933334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +375,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315862105971933333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2127279155, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: texUICleanButton
@@ -367,7 +388,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315862105971933333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1760504538, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Script: {fileID: -758327997, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: skinCleanButton
@@ -591,7 +612,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6387592601705117506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2127279155, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: texUIOutlineOnly
@@ -623,7 +644,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8948337102172980796}
   - {fileID: 7820133657821703276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -650,46 +670,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!1 &8948337102172980795
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8948337102172980796}
-  m_Layer: 5
-  m_Name: Empty
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8948337102172980796
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8948337102172980795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8948337101613705529}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 48}
-  m_Pivot: {x: 0.5, y: 0.5}
