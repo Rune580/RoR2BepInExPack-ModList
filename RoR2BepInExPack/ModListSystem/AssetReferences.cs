@@ -17,13 +17,14 @@ internal static class AssetReferences
 
     internal static GameObject SplitButton;
 
-    internal static void Init()
+    internal static async Task Init()
     {
         if (_initialized)
             throw new Exception("AssetReferences has already been initialized!");
+
+        await LoadSpriteReferences();
+        await LoadSkinReferences();
         
-        LoadSpriteReferences();
-        LoadSkinReferences();
         LoadPrefabs();
 
         _initialized = true;
@@ -34,14 +35,14 @@ internal static class AssetReferences
         return Assets[key] as T;
     }
 
-    private static async void LoadSpriteReferences()
+    private static async Task LoadSpriteReferences()
     {
         Assets["texUICleanButton"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUICleanButton.png"), new Rect(0, 0, 256, 64), new Vector2(128, 32), 100, 0, SpriteMeshType.Tight, new Vector4(8, 8, 8, 8));
         Assets["texUIOutlineOnly"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIOutlineOnly.png"), new Rect(0, 0, 256, 64), new Vector2(128, 32), 100, 0, SpriteMeshType.Tight, new Vector4(4, 4, 4, 4));
         Assets["texUIHighlightBoxOutlineThick"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIHighlightBoxOutlineThick.png"), new Rect(0, 0, 256, 64), new Vector2(128, 32), 100, 0, SpriteMeshType.Tight, new Vector4(6, 12, 12, 6));
     }
 
-    private static async void LoadSkinReferences()
+    private static async Task LoadSkinReferences()
     {
         Assets["skinCleanButton"] = await LoadAssetAsync<UISkinData>("RoR2/Base/UI/skinCleanButton.asset");
     }
