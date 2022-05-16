@@ -1,3 +1,5 @@
+using System;
+using System.Reflection;
 using BepInEx;
 using RoR2;
 using RoR2BepInExPack.LegacyAssetSystem;
@@ -17,8 +19,9 @@ public class RoR2BepInExPack : BaseUnityPlugin
         Log.Init(Logger);
 
         RoR2Application.isModded = true;
-
+        
         InitHooks();
+        SetupLanguageTokens();
         ModListSystem.ModListMain.Init();
     }
 
@@ -26,6 +29,13 @@ public class RoR2BepInExPack : BaseUnityPlugin
     {
         ModListSystem.ModListMain.SetupDictionary();
     }
+
+    private void SetupLanguageTokens()
+    {
+        Language.collectLanguageRootFolders += list =>
+            list.Add(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Info.Location)!, "Language"));
+    }
+    
     private void InitHooks()
     {
         ILLine.Init();

@@ -22,9 +22,17 @@
 	  <NoWarn>NU1701</NoWarn>
 	</PackageReference>
   </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="../Language/**" CopyToOutputDirectory="PreserveNewest" LinkBase="Language" />
+  </ItemGroup>
+    
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Copy SourceFiles="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" DestinationFolder="$(OutputPath)" />
+  </Target>
     
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" DestinationFolder="$(OutputPath)"/>
+    <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll" DestinationFolder="../Unity/Packages/RoR2BepInExPack/" />
   </Target>
 
 </Project>
