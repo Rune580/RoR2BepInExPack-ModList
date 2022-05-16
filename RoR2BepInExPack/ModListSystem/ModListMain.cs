@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using BepInEx;
 using BepInEx.Bootstrap;
+using RoR2;
 
 namespace RoR2BepInExPack.ModListSystem;
 
@@ -24,7 +25,8 @@ public static class ModListMain
     private static Dictionary<string, ModDataInfo> guidToModDataInfo = new Dictionary<string, ModDataInfo>();
     internal static void Init()
     {
-        AssetReferences.Init();
+        ModListContent.Init();
+        MenuModifications.InitHooks();
     }
 
     internal static void SetupDictionary()
