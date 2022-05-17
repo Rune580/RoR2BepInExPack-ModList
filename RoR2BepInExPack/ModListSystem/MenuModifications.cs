@@ -24,11 +24,17 @@ internal static class MenuModifications
 
     private static void MainMenuControllerOnAwake(Action<MainMenuController> orig, MainMenuController self)
     {
-        AttachModsButtonToMainMenu(self.titleMenuScreen);
+        HGButton modsButton = AttachModsButtonToMainMenu(self.titleMenuScreen);
+        GameObject menuMods = AttachMenuModsToMenuList(self.gameObject);
+
+        BaseMainMenuScreen modsMenuScreen = menuMods.GetComponentInChildren<BaseMainMenuScreen>();
+
+        modsButton.onClick.AddListener(() => self.SetDesiredMenuScreen(modsMenuScreen));
+        
         orig(self);
     }
 
-    private static void AttachModsButtonToMainMenu(BaseMainMenuScreen titleMenu)
+    private static HGButton AttachModsButtonToMainMenu(BaseMainMenuScreen titleMenu)
     {
         Transform juiceTransform = titleMenu.transform.Find("SafeZone/GenericMenuButtonPanel/JuicePanel");
         
@@ -53,5 +59,12 @@ internal static class MenuModifications
         settingsButtonObject.transform.SetParent(splitInstance.transform);
         settingsButtonObject.transform.SetAsFirstSibling();
         settingsButtonObject.transform.localScale = Vector3.one;
+
+        return modsButton;
+    }
+
+    private static GameObject AttachMenuModsToMenuList(GameObject mainMenu)
+    {
+        return UnityObject.Instantiate(AssetReferences.MenuMods, mainMenu.transform);
     }
 }
