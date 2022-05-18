@@ -12,6 +12,8 @@ public class SerializableModData : ScriptableObject
 {
     [Tooltip($"The GUID of the mod this ModData belongs to.")]
     public string modGUIDIdentifier;
+    [Tooltip($"If your BaseUnityPlugin reverts all changes when it gets disabled (IE: BetterUI), you can set this to true so your mod can be disabled at runtime. If you dont know what this means, leave this false.")]
+    public bool supportsRuntimeToggling;
     public TextAsset modDescription;
     public Sprite modIcon;
     public HyperLink[] links;
@@ -27,5 +29,5 @@ public class SerializableModData : ScriptableObject
         instances.Remove(this);
     }
 
-    internal void CreateModData() => new ModData(modGUIDIdentifier, modDescription.text, modIcon, links);
+    internal void CreateModData() => new ModData(modGUIDIdentifier, modDescription.text, modIcon, links, supportsRuntimeToggling);
 }

@@ -11,14 +11,17 @@ public class ModData
     public Sprite ModIcon { get; }
     public HyperLink[] Links { get; }
 
+    public bool SupportsRuntimeToggling { get; }
+
     internal readonly static List<ModData> instances = new List<ModData>();
 
-    public ModData(string guid, string description, Sprite icon, params HyperLink[] hyperlinks)
+    public ModData(string guid, string description, Sprite icon, HyperLink[] hyperLinks, bool supportsRuntimeToggling = false)
     {
         ModGUIDIdentifier = guid;
         ModDescription = description;
         ModIcon = icon;
-        Links = hyperlinks;
+        Links = hyperLinks;
+        SupportsRuntimeToggling = supportsRuntimeToggling;
 
         instances.Add(this);
     }
