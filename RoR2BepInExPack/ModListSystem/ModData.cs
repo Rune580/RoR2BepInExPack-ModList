@@ -28,9 +28,6 @@ public class ModData : ScriptableObject
     public Sprite modIcon;
     public HyperLink[] links;
 
-    [Space(10)]
-    public GameObject customUIPrefab;
-
     internal readonly static List<ModData> instances = new List<ModData>();
 
     private void OnEnable()
@@ -45,7 +42,6 @@ public class ModData : ScriptableObject
     internal static ModData CreateGeneric(PluginInfo pluginInfo)
     {
         ModData data = CreateInstance<ModData>();
-        data.customUIPrefab = null;
         data.modIcon = null;
         data.links = Array.Empty<HyperLink>();
         data.modGUIDIdentifier = pluginInfo.Metadata.GUID;
