@@ -1,52 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BepInEx;
 using UnityEngine;
 
-namespace RoR2BepInExPack;
-
-[CreateAssetMenu(menuName = "RoR2BepinexPack/ModData")]
-
-public class ModData : ScriptableObject
+namespace RoR2BepInExPack.ModListSystem;
+public class ModData
 {
-    [Serializable]
-    public struct HyperLink
-    {
-        public string displayName;
-        public string link;
-
-        public HyperLink(string displayName, string link)
-        {
-            this.displayName = displayName;
-            this.link = link;
-        }
-    }
-    [Tooltip($"The GUID of the mod this ModData belongs to.")]
-    public string modGUIDIdentifier;
-    public string modDescription;
-    public Sprite modIcon;
-    public HyperLink[] links;
+    public string ModGUIDIdentifier { get; }
+    public string ModDescription { get; }
+    public Sprite ModIcon { get; }
+    public HyperLink[] Links { get; }
 
     internal readonly static List<ModData> instances = new List<ModData>();
 
-    private void OnEnable()
+    public ModData(string guid, string description, Sprite icon, params HyperLink[] hyperlinks)
     {
+        ModGUIDIdentifier = guid;
+        ModDescription = description;
+        ModIcon = icon;
+        Links = hyperlinks;
+
         instances.Add(this);
     }
-    private void OnDisable()
+
+    internal static ModData CreateGeneric(string guid)
     {
-        instances.Remove(this);
+        var genericModData = new ModData(guid, $"No ModData Provided...", null, Array.Empty<HyperLink>());
+        instances.Remove(genericModData);
+        return genericModData;
     }
+}
 
-    internal static ModData CreateGeneric(PluginInfo pluginInfo)
+[Serializable]
+public struct HyperLink
+{
+    public string displayName;
+    public string link;
+
+    public HyperLink(string displayName, string link)
     {
-        ModData data = CreateInstance<ModData>();
-        data.modIcon = null;
-        data.links = Array.Empty<HyperLink>();
-        data.modGUIDIdentifier = pluginInfo.Metadata.GUID;
-        data.modDescription = $"No ModData provided...";
-
-        return data;
+        this.displayName = displayName;
+        this.link = link;
     }
 }

@@ -36,42 +36,50 @@ public class ModDataInfo
 
 public static class ModListMain
 {
-    private static Dictionary<string, ModDataInfo> guidToModDataInfo = new Dictionary<string, ModDataInfo>();
-    private static List<Tuple<string, GameObject>> guidCustomUIPairs = new List<Tuple<string, GameObject>>();
+    internal static Dictionary<string, ModDataInfo> guidToModDataInfo = new Dictionary<string, ModDataInfo>();
+    private static Dictionary<string, GameObject> guidToPrefab = new Dictionary<string, GameObject>();
     internal static void Init()
     {
         ModListContent.Init();
         MenuModifications.InitHooks();
     }
 
-    internal static void SetupDictionary()
+    internal static void Start()
     {
-        foreach(KeyValuePair<string, PluginInfo> kvp in Chainloader.PluginInfos)
+        CreateModDataFromSerializableModDatas();
+        PopulateDictionary();
+    }
+
+    private static void CreateModDataFromSerializableModDatas()
+    {
+        SerializableModData.instances.ForEach(smd => smd.CreateModData());
+    }
+
+    private static void PopulateDictionary()
+    {
+        foreach (KeyValuePair<string, PluginInfo> kvp in Chainloader.PluginInfos)
         {
             string guid = kvp.Key;
             PluginInfo info = kvp.Value;
 
-            //Check for prefab first
-            Tuple<string, GameObject> matchingTuple = guidCustomUIPairs.FirstOrDefault(x => x.Item1.Equals(guid, StringComparison.OrdinalIgnoreCase));
-            if(matchingTuple != null)
+            //check for prefab first
+            if (guidToPrefab.TryGetValue(info.Metadata.GUID, out GameObject prefab))
             {
-                guidToModDataInfo[guid] = new ModDataInfo(info, matchingTuple.Item2);
+                guidToModDataInfo.Add(info.Metadata.GUID, new ModDataInfo(info, prefab));
                 continue;
             }
-
             //If no prefab exists, check for ModData
-            ModData potentialModData = ModData.instances.FirstOrDefault(md => md.modGUIDIdentifier.Equals(guid, StringComparison.OrdinalIgnoreCase));
-            if(potentialModData)
+            ModData potentialModData = ModData.instances.FirstOrDefault(md => md.ModGUIDIdentifier.Equals(guid, StringComparison.OrdinalIgnoreCase));
+            if (potentialModData != null)
             {
                 guidToModDataInfo[guid] = new ModDataInfo(info, potentialModData);
             }
             else //No ModData exists? Create a generic ModData
             {
-                Log.Debug($"Could not find a ModData for guid {guid}");
-                guidToModDataInfo[guid] = new ModDataInfo(info, ModData.CreateGeneric(info));
+                Log.Debug($"Could not find a ModData or UIPrefab for guid {guid}");
+                guidToModDataInfo[guid] = new ModDataInfo(info, ModData.CreateGeneric(guid));
             }
         }
     }
-
-    public static void AddCustomUIPrefab(string guid, GameObject uiPrefab) => guidCustomUIPairs.Add(new Tuple<string, GameObject>(guid, uiPrefab));
+    public static void AddCustomUIPrefab(string guid, GameObject uiPrefab) => guidToPrefab.Add(guid, uiPrefab);
 }

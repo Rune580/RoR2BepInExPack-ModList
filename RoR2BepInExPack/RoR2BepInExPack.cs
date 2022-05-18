@@ -27,7 +27,7 @@ public class RoR2BepInExPack : BaseUnityPlugin
 
     private void Start()
     {
-        ModListSystem.ModListMain.SetupDictionary();
+        ModListSystem.ModListMain.Start();
     }
 
     private void SetupLanguageTokens()
