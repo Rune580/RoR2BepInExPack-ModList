@@ -52,7 +52,7 @@ public static class ModListMain
 
     private static void CreateModDataFromSerializableModDatas()
     {
-        SerializableModData.instances.ForEach(smd => smd.CreateModData());
+        // SerializableModData.instances.ForEach(smd => smd.CreateModData());
     }
 
     private static void PopulateDictionary()
@@ -69,7 +69,7 @@ public static class ModListMain
                 continue;
             }
             //If no prefab exists, check for ModData
-            ModData potentialModData = ModData.instances.FirstOrDefault(md => md.ModGUIDIdentifier.Equals(guid, StringComparison.OrdinalIgnoreCase));
+            ModData potentialModData = ModData.Instances.FirstOrDefault(md => md.Guid.Equals(guid, StringComparison.OrdinalIgnoreCase));
             if (potentialModData != null)
             {
                 guidToModDataInfo[guid] = new ModDataInfo(info, potentialModData);
@@ -77,7 +77,9 @@ public static class ModListMain
             else //No ModData exists? Create a generic ModData
             {
                 Log.Debug($"Could not find a ModData or UIPrefab for guid {guid}");
-                guidToModDataInfo[guid] = new ModDataInfo(info, ModData.CreateGeneric(guid));
+
+                ModData modData = new ModDataBuilder().WithBepInPlugin(info.Metadata).InternalBuild();
+                guidToModDataInfo[guid] = new ModDataInfo(info, modData);
             }
         }
     }

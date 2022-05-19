@@ -14,7 +14,7 @@ public class SerializableModData : ScriptableObject
     public string modGUIDIdentifier;
     [Tooltip($"If your BaseUnityPlugin reverts all changes when it gets disabled (IE: BetterUI), you can set this to true so your mod can be disabled at runtime. If you dont know what this means, leave this false.")]
     public bool supportsRuntimeToggling;
-    public TextAsset modDescription;
+    public TextAsset modDescription; // Should replace this with a description token
     public Sprite modIcon;
     public HyperLink[] links;
 
@@ -28,6 +28,4 @@ public class SerializableModData : ScriptableObject
     {
         instances.Remove(this);
     }
-
-    internal void CreateModData() => new ModData(modGUIDIdentifier, modDescription.text, modIcon, links, supportsRuntimeToggling);
 }

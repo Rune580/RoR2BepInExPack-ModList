@@ -3,6 +3,7 @@ using System.Reflection;
 using MonoMod.RuntimeDetour;
 using RoR2.UI;
 using RoR2.UI.MainMenu;
+using RoR2BepInExPack.ModListSystem.Components;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +39,7 @@ internal static class MenuModifications
     {
         Transform juiceTransform = titleMenu.transform.Find("SafeZone/GenericMenuButtonPanel/JuicePanel");
         
+        
         GameObject settingsButtonObject = juiceTransform.Find("GenericMenuButton (Settings)").gameObject;
         GameObject splitInstance = UnityObject.Instantiate(AssetReferences.SplitButton, juiceTransform);
         GameObject modsButtonObject = splitInstance.transform.Find("GenericMenuButton (Mods)").gameObject;
@@ -59,6 +61,8 @@ internal static class MenuModifications
         settingsButtonObject.transform.SetParent(splitInstance.transform);
         settingsButtonObject.transform.SetAsFirstSibling();
         settingsButtonObject.transform.localScale = Vector3.one;
+        
+        splitInstance.GetComponent<SplitButtonSelectable>().settingsButton = settingsButtonObject.GetComponent<Selectable>();
 
         return modsButton;
     }

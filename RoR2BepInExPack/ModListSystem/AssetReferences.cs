@@ -43,6 +43,7 @@ internal static class AssetReferences
         Assets["texUIOutlineOnly"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIOutlineOnly.png"), new Rect(0, 0, 256, 64), new Vector2(128, 32), 100, 0, SpriteMeshType.Tight, new Vector4(4, 4, 4, 4));
         Assets["texUIHighlightBoxOutlineThick"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIHighlightBoxOutlineThick.png"), new Rect(0, 0, 256, 64), new Vector2(128, 32), 100, 0, SpriteMeshType.Tight, new Vector4(6, 12, 12, 6));
         Assets["texUIAnimateSliceNakedButton"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIAnimateSliceNakedButton.png"), new Rect(0, 0, 64, 64), new Vector2(32, 32), 100, 0, SpriteMeshType.Tight, new Vector4(8, 8, 8, 8));
+        Assets["texUIPopupRect"] = Sprite.Create(await LoadAssetAsync<Texture2D>("RoR2/Base/UI/texUIPopupRect.png"), new Rect(0, 0, 128, 128), new Vector2(64, 64), 100, 0, SpriteMeshType.Tight, new Vector4(5, 5, 5, 5));
     }
 
     private static async Task LoadSkinReferences()
@@ -54,6 +55,7 @@ internal static class AssetReferences
     private static async Task LoadMaterialReferences()
     {
         Assets["matUIAnimateAlphaNakedButton"] = await LoadAssetAsync<Material>("RoR2/Base/UI/matUIAnimateAlphaNakedButton.mat");
+        Assets["Default-Translucent"] = await LoadAssetAsync<Material>("TranslucentImage/Default-Translucent.mat");
     }
 
     private static void LoadPrefabs()

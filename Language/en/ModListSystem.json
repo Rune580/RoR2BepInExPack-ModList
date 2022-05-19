@@ -1,6 +1,8 @@
 {
   "strings": {
     "TITLE_MODS": "Mods",
-    "TITLE_MODS_DESC": "View installed mods"
+    "TITLE_MODS_DESC": "View installed mods.",
+    "MOD_CARD_NO_ICON": "No Icon",
+    "MOD_NO_DESCRIPTION": "No description provided."
   }
 }

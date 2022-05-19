@@ -5,12 +5,12 @@ namespace RoR2BepInExPack.ModListSystem;
 [Serializable]
 public struct HyperLink
 {
-    public string displayName;
+    public string displayNameToken;
     public string link;
 
-    public HyperLink(string displayName, string link)
+    public HyperLink(string displayNameToken, string link)
     {
-        this.displayName = displayName;
+        this.displayNameToken = displayNameToken;
         this.link = link;
     }
 }
