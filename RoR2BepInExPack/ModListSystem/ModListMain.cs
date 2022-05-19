@@ -19,6 +19,8 @@ public class ModDataInfo
 
     public ModDataInfo(PluginInfo info, ModData modData)
     {
+        modData.ValidateIcon(info);
+        
         PluginInfo = info;
         ModData = modData;
         UIPrefab = null;
