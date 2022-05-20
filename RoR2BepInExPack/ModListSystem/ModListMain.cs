@@ -19,7 +19,7 @@ public class ModDataInfo
 
     public ModDataInfo(PluginInfo info, ModData modData)
     {
-        modData.ValidateIcon(info);
+        modData.Validate(info);
         
         PluginInfo = info;
         ModData = modData;

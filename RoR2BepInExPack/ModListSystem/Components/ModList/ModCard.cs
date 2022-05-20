@@ -9,20 +9,29 @@ public class ModCard : HGButton
     public Image modIcon;
     public GameObject iconFallback;
     public HGTextMeshProUGUI nameLabel;
+    public HGTextMeshProUGUI versionLabel;
     public LanguageTextMeshController descriptionLanguageController;
+    
+    [HideInInspector] public RectTransform rectTransform;
 
     private ModData _boundData;
 
     public override void Awake()
     {
+        if (!rectTransform)
+            rectTransform = GetComponent<RectTransform>();
+        
         if (_boundData != null)
             ReloadFromData();
-        
+
         base.Awake();
     }
 
     public override void OnEnable()
     {
+        if (!rectTransform)
+            rectTransform = GetComponent<RectTransform>();
+        
         if (_boundData != null)
             ReloadFromData();
         
@@ -50,6 +59,7 @@ public class ModCard : HGButton
         }
         
         nameLabel.SetText(_boundData.Name);
+        versionLabel.SetText(_boundData.Version.ToString());
         
         descriptionLanguageController.token = _boundData.DescriptionToken;
     }

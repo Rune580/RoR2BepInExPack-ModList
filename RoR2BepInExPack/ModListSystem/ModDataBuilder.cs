@@ -19,11 +19,7 @@ public class ModDataBuilder
             .Select(type => type.GetCustomAttribute<BepInPlugin>()).FirstOrDefault(plugin => plugin != null);
 
         if (plugin != default)
-        {
-            _modDataInternal.Guid = plugin.GUID;
-            _modDataInternal.Name = plugin.Name;
-            _modDataInternal.Version = plugin.Version;
-        }
+            _modDataInternal.Plugin = plugin;
     }
 
     public ModDataBuilder WithBepInPlugin(string modGuid, string modName, string modVersion)
@@ -112,6 +108,9 @@ public class ModDataBuilder
             Links = _modDataInternal.Links.ToArray(),
             SupportsRuntimeToggling = _modDataInternal.SupportsRuntimeToggling
         };
+
+        if (_modDataInternal.Plugin != default && string.IsNullOrEmpty(modData.Guid))
+            modData.Guid = _modDataInternal.Plugin.GUID;
         
         ModData.Instances.Add(modData);
 
@@ -120,6 +119,7 @@ public class ModDataBuilder
 
     private struct ModDataInternal
     {
+        internal BepInPlugin Plugin = null;
         internal string Guid = "";
         internal string Name = "";
         internal Version Version = null;
