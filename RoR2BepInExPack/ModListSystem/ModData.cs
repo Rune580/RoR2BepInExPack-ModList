@@ -8,6 +8,7 @@ using RoR2;
 using UnityEngine;
 using Console = System.Console;
 using Path = System.IO.Path;
+using Newtonsoft.Json;
 
 namespace RoR2BepInExPack.ModListSystem;
 
@@ -28,13 +29,20 @@ public class ModData
     internal void Validate(PluginInfo info)
     {
         bool manifestFound = TryGetManifestLocation(info, out string manifestPath);
+
         // Todo: Fetch metadata from manifest and prioritize it over plugin metadata.
+        if(manifestFound)
+        {
+            ReadFromJSON(manifestPath);
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(Name))
+                Name = info.Metadata.Name;
 
-        if (string.IsNullOrEmpty(Name))
-            Name = info.Metadata.Name;
-
-        if (Version == null)
-            Version = info.Metadata.Version;
+            if (Version == null)
+                Version = info.Metadata.Version;
+        }
         
         ValidateIcon(info);
     }
@@ -65,6 +73,19 @@ public class ModData
         return false;
     }
 
+    private void ReadFromJSON(string jsonFilePath)
+    {
+        string jsonFileContents = File.ReadAllText(jsonFilePath);
+
+        ThunderstoreManifest manifest = JsonConvert.DeserializeObject<ThunderstoreManifest>(jsonFileContents);
+        
+        if(manifest != null)
+        {
+            Name = manifest.name;
+            Version = new Version(manifest.version_number);
+        }
+
+    }
     private void ValidateIcon(PluginInfo info)
     {
         if (Icon)
@@ -95,5 +116,14 @@ public class ModData
         {
             // Couldn't find icon for one reason or another
         }
+    }
+    public class ThunderstoreManifest
+    {
+        public string name { get; set; }
+        public string version_number { get; set; }
+        public string website_url { get; set; }
+        public string description { get; set; }
+
+        public IList<string> dependencies { get; set; }
     }
 }

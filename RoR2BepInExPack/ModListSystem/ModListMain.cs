@@ -48,13 +48,7 @@ public static class ModListMain
 
     internal static void Start()
     {
-        CreateModDataFromSerializableModDatas();
         PopulateDictionary();
-    }
-
-    private static void CreateModDataFromSerializableModDatas()
-    {
-        // SerializableModData.instances.ForEach(smd => smd.CreateModData());
     }
 
     private static void PopulateDictionary()
