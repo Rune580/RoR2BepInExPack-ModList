@@ -26,6 +26,12 @@
   <ItemGroup>
     <Content Include="../Language/**" CopyToOutputDirectory="PreserveNewest" LinkBase="Language" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
     
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" DestinationFolder="$(OutputPath)" />
