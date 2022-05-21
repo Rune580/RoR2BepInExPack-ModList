@@ -9,7 +9,8 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "RoR2.dll",
-        "RoR2BepInExPack.dll"
+        "RoR2BepInExPack.dll",
+        "BepInEx.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

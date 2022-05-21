@@ -38,8 +38,8 @@ public class ModDataInfo
 
 public static class ModListMain
 {
-    internal static Dictionary<string, ModDataInfo> guidToModDataInfo = new Dictionary<string, ModDataInfo>();
-    private static Dictionary<string, GameObject> guidToPrefab = new Dictionary<string, GameObject>();
+    internal static Dictionary<string, ModDataInfo> guidToModDataInfo = new();
+    private static Dictionary<string, GameObject> guidToPrefab = new();
     internal static void Init()
     {
         ModListContent.Init();

@@ -855,8 +855,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1944973209436178666}
   m_HandleRect: {fileID: 5008899873257476643}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1877,7 +1877,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modCardPrefab: {fileID: 7505882038145907532, guid: f3ea90ee917310e429b7d270d512a393,
     type: 3}
-  viewport: {fileID: 4016830847995823097}
+  targetScrollRect: {fileID: 1525262547332460456}
+  padding:
+    m_Left: 4
+    m_Right: 4
+    m_Top: 0
+    m_Bottom: 0
+  spacing: 6
+  maxPoolSize: 10
+  coverageMultiplier: 1.5
 --- !u!1 &4914688302939705871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,11 +2385,11 @@ RectTransform:
   m_Father: {fileID: 2905228250093997777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &3408902992354220210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,7 +2397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819037257258831528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
@@ -2451,7 +2459,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819037257258831528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 

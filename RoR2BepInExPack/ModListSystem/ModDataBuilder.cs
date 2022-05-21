@@ -96,7 +96,7 @@ public class ModDataBuilder
         InternalBuild();
     }
 
-    internal ModData InternalBuild()
+    public ModData InternalBuild()
     {
         ModData modData = new ModData
         {

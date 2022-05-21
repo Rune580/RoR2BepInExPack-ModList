@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using BepInEx;
-using Rewired.Utils.Libraries.TinyJson;
-using RoR2;
 using UnityEngine;
-using Console = System.Console;
 using Path = System.IO.Path;
 using Newtonsoft.Json;
 
