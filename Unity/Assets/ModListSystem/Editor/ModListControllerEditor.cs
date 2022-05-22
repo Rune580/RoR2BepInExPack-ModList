@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using RoR2BepInExPack.ModListSystem;
 using RoR2BepInExPack.ModListSystem.Components.ModList;
+using UnityEditor;
 using UnityEngine;
 
 namespace ModListSystem.Editor
@@ -8,15 +9,19 @@ namespace ModListSystem.Editor
     [UnityEditor.CustomEditor(typeof(ModListController))]
     public class ModListControllerEditor : UnityEditor.Editor
     {
+        private int _testCount = 1000;
+
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+
+            _testCount = EditorGUILayout.IntField("Data Size", _testCount);
 
             if (GUILayout.Button("Test"))
             {
                 var controller = (ModListController)target;
                 
-                controller.UpdateDataSet(GenTestData(30));
+                controller.UpdateDataSet(GenTestData(_testCount));
             }
         }
 

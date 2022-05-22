@@ -46,6 +46,8 @@ public class ModCard : HGButton
 
     private void ReloadFromData()
     {
+        ResetState();
+        
         if (_boundData.Icon)
         {
             iconFallback.SetActive(false);
@@ -62,5 +64,11 @@ public class ModCard : HGButton
         versionLabel.SetText(_boundData.Version.ToString());
         
         descriptionLanguageController.token = _boundData.DescriptionToken;
+    }
+
+    private void ResetState()
+    {
+        OnDeselect(null);
+        DoStateTransition(SelectionState.Normal, true);
     }
 }
