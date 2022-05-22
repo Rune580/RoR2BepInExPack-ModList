@@ -5,40 +5,32 @@
     <LangVersion>preview</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-    
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Unity.Analyzers" Version="*">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="BepInEx.Analyzers" Version="*">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-	<PackageReference Include="UnityEngine.Modules" Version="2019.4.26" />
-	<PackageReference Include="BepInEx.Core" Version="5.4.19" />
-    <PackageReference Include="RiskOfRain2.GameLibs" Version="*-*" />
-	<PackageReference Include="MMHOOK.RoR2" Version="*">
-	  <NoWarn>NU1701</NoWarn>
-	</PackageReference>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <PackageReference Include="BepInEx.Core" Version="5.4.19" />
+    <PackageReference Include="MMHOOK.RoR2" Version="2022.4.19" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.13.0" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <PackageReference Include="RiskOfRain2.GameLibs" Version="1.2.3.1-r.0" />
+    <PackageReference Include="UnityEngine.Modules" Version="2019.4.26" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="../Language/**" CopyToOutputDirectory="PreserveNewest" LinkBase="Language" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
-    
+
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="../Unity/AssetBundles/StandaloneWindows/modlistsystem-assets" DestinationFolder="$(OutputPath)" />
   </Target>
-    
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll;$(OutputPath)/RoR2BepInExPack.pdb" DestinationFolder="../Unity/Packages/RoR2BepInExPack/" />
+    <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll;$(OutputPath)/RoR2BepInExPack.pdb" DestinationFolder="../Unity/Packages/BepInExPack/BepInExPack/BepInEx/plugins/RoR2BepInExPack/" />
   </Target>
 
 </Project>
