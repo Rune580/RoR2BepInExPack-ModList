@@ -79,3 +79,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Tt]hunder[Kk]it[Ss]ettings/
 /[Aa]ssets/[Tt]hunder[Kk]it[Ss]ettings/*
 /[Aa]ssets/[Ss]treamingAssets
+
+# Built binaries
+/Packages/RoR2BepInExPack/RoR2BepInExPack.dll
+/Packages/RoR2BepInExPack/RoR2BepInExPack.pdb
