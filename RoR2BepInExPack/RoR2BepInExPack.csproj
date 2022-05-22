@@ -30,7 +30,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll;$(OutputPath)/RoR2BepInExPack.pdb" DestinationFolder="../Unity/Packages/RoR2BepInExPack/" />
+    <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll;$(OutputPath)/RoR2BepInExPack.pdb" DestinationFolder="../Unity/Packages/BepInExPack/BepInExPack/BepInEx/plugins/RoR2BepInExPack/" />
   </Target>
 
 </Project>
