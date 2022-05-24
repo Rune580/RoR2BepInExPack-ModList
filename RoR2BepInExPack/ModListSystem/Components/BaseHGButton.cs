@@ -68,7 +68,7 @@ public class BaseHGButton : MPButton
         if (imageOnHover)
         {
             float hoverAlpha = _isHovering ? 1f : 0f;
-            float hoverScale = _isHovering ? 1f : 0f;
+            float hoverScale = _isHovering ? 1f : 1.1f;
 
             Color imageColor = imageOnHover.color;
             Transform imageTransform = imageOnHover.transform;
