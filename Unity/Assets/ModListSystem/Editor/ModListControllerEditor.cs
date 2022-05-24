@@ -9,7 +9,7 @@ namespace ModListSystem.Editor
     [UnityEditor.CustomEditor(typeof(ModListController))]
     public class ModListControllerEditor : UnityEditor.Editor
     {
-        private int _testCount = 1000;
+        private int _testCount = 30;
 
         public override void OnInspectorGUI()
         {

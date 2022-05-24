@@ -3,6 +3,8 @@
     "TITLE_MODS": "Mods",
     "TITLE_MODS_DESC": "View installed mods.",
     "MOD_CARD_NO_ICON": "No Icon",
-    "MOD_NO_DESCRIPTION": "No description provided."
+    "MOD_NO_DESCRIPTION": "No description provided.",
+    "MOD_LIST_SORT_TYPE_ALPHABETICAL": "Alphabetical",
+    "MOD_LIST_SORT_TYPE_LOAD": "Load Order"
   }
 }

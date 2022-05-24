@@ -1,4 +1,5 @@
-﻿using RoR2.UI;
+﻿using System;
+using RoR2.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -68,7 +69,14 @@ public class ModCard : HGButton
 
     private void ResetState()
     {
-        OnDeselect(null);
-        DoStateTransition(SelectionState.Normal, true);
+        try
+        {
+            OnDeselect(null);
+            DoStateTransition(SelectionState.Normal, true);
+        }
+        catch (NullReferenceException)
+        {
+            
+        }
     }
 }

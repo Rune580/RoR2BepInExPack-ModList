@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using static RoR2BepInExPack.ModListSystem.Components.ModList.ModListSortDropdown;
 
 namespace RoR2BepInExPack.ModListSystem.Components.ModList;
 
@@ -12,6 +13,7 @@ public class ModListController : MonoBehaviour
 {
     public GameObject modCardPrefab;
     public TMP_InputField searchField;
+    public ModListSortDropdown sortDropdown;
     public ScrollRect targetScrollRect;
     public RectOffset padding;
     public float spacing;
@@ -50,7 +52,10 @@ public class ModListController : MonoBehaviour
 
         if (!searchField)
             return;
-        
+
+        if (!sortDropdown)
+            return;
+
         _viewport = targetScrollRect.viewport;
 
         if (!_viewport)
@@ -79,8 +84,21 @@ public class ModListController : MonoBehaviour
         
         searchField.onValueChanged.AddListener(OnSearch);
         searchField.onSubmit.AddListener(OnSearch);
+        
+        sortDropdown.OnValueChanged.AddListener(OnSort);
 
         targetScrollRect.onValueChanged.AddListener(HandleScroll);
+    }
+    
+    private void OnSearch(string text)
+    {
+        
+    }
+
+    private void OnSort(ModListSort sort)
+    {
+        Sorting = sort;
+        RefreshView();
     }
 
     public void UpdateDataSet(ModDataInfo[] mods)
@@ -96,11 +114,6 @@ public class ModListController : MonoBehaviour
         _content.sizeDelta = new Vector2(_content.sizeDelta.x, contentHeight + padding.bottom + padding.top);
         
         SetupPool();
-    }
-
-    private void OnSearch(string text)
-    {
-        
     }
 
     private void UpdateViewBounds()
@@ -138,6 +151,16 @@ public class ModListController : MonoBehaviour
             modCard.BindData(_mods[_cardPool.Size].ModData);
 
             _cardPool.Add(modCard);
+        }
+    }
+
+    private void RefreshView()
+    {
+        int i = _cardPool.TopDataIndex;
+        foreach (ModCard card in _cardPool)
+        {
+            card.BindData(_mods[i].ModData);
+            i++;
         }
     }
 
@@ -227,7 +250,7 @@ public class ModListController : MonoBehaviour
         return _corners[0].y;
     }
 
-    private class RecycleArray<TItem> where TItem : Component
+    private class RecycleArray<TItem> : IEnumerable<TItem> where TItem : Component
     {
         private readonly List<TItem> _pool;
         private int _topIndex;
@@ -298,27 +321,70 @@ public class ModListController : MonoBehaviour
             TopDataIndex = 0;
             BottomDataIndex = 0;
         }
-    }
-    
-    public enum ModListSortingTypes
-    {
-        Alphabetical,
-        LoadOrder
-        
-    }
-    
-    public enum SortDirections
-    {
-        Ascending,
-        Descending
-    }
-    
-    public struct ModListSort
-    {
-        public ModListSortingTypes SortingType = ModListSortingTypes.LoadOrder;
-        public SortDirections Direction = SortDirections.Descending;
-        
-        public ModListSort() { }
+
+        public IEnumerator<TItem> GetEnumerator()
+        {
+            return new RecycleItemEnumerator(_pool.ToArray(), _topIndex, _bottomIndex);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class RecycleItemEnumerator : IEnumerator<TItem>
+        {
+            private readonly TItem[] _items;
+            private readonly int _topIndex;
+            private readonly int _bottomIndex;
+            private int _recyclePosition;
+            private int _arrayPosition = -1;
+
+            internal RecycleItemEnumerator(TItem[] items, int topIndex, int bottomIndex)
+            {
+                _items = items;
+                _topIndex = topIndex;
+                _bottomIndex = bottomIndex;
+
+                _recyclePosition = _topIndex - 1;
+            }
+            
+            public bool MoveNext()
+            {
+                _arrayPosition++;
+                _recyclePosition++;
+
+                if (_recyclePosition >= _items.Length)
+                    _recyclePosition = 0;
+                
+                return _arrayPosition < _items.Length;
+            }
+
+            public void Reset()
+            {
+                _recyclePosition = _topIndex;
+                _arrayPosition = -1;
+            }
+
+            public TItem Current
+            {
+                get
+                {
+                    try
+                    {
+                        return _items[_recyclePosition];
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                }
+            }
+
+            object IEnumerator.Current => Current;
+
+            public void Dispose() { }
+        }
     }
 
     private class ModList
@@ -418,10 +484,22 @@ public class ModListController : MonoBehaviour
             filter = filter.ToLower();
 
             bool contains = text.Contains(filter);
+            bool equals = text == filter;
 
-            
-            // Todo: yes I know this is only doing 1 check with the filter, I'll add more later
-            return contains;
+            string parsedText = ParseString(text);
+            string parsedFilter = ParseString(filter);
+
+            bool parsedContains = parsedText.Contains(parsedFilter);
+            bool parsedEquals = parsedText == parsedFilter;
+
+            return contains || equals || parsedContains || parsedEquals;
+        }
+
+        private static string ParseString(string text)
+        {
+            return text
+                .Replace(' ', '_')
+                .Replace(":", "");
         }
     }
 }
