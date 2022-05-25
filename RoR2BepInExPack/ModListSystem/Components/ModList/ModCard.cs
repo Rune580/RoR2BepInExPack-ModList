@@ -11,6 +11,7 @@ public class ModCard : HGButton
     public GameObject iconFallback;
     public HGTextMeshProUGUI nameLabel;
     public HGTextMeshProUGUI versionLabel;
+    public HGTextMeshProUGUI authorLabel;
     public LanguageTextMeshController descriptionLanguageController;
     
     [HideInInspector] public RectTransform rectTransform;
@@ -59,6 +60,16 @@ public class ModCard : HGButton
         {
             iconFallback.SetActive(true);
             modIcon.enabled = false;
+        }
+
+        if (_boundData.Author != "Unknown Author")
+        {
+            authorLabel.enabled = true;
+            authorLabel.SetText(_boundData.Author);
+        }
+        else
+        {
+            authorLabel.enabled = false;
         }
         
         nameLabel.SetText(_boundData.Name);

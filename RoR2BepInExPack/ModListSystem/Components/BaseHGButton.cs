@@ -81,9 +81,7 @@ public class BaseHGButton : MPButton
         }
 
         if (imageOnInteract)
-        {
             imageOnInteract.enabled = interactable;
-        }
     }
 
     private void DoClickSound()

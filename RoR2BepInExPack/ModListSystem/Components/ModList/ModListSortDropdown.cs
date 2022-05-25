@@ -166,6 +166,7 @@ public class ModListSortDropdown : BaseHGButton
     public enum ModListSortingTypes
     {
         Alphabetical,
+        Author,
         LoadOrder
     }
     
@@ -189,6 +190,7 @@ public class ModListSortDropdown : BaseHGButton
                 {
                     ModListSortingTypes.Alphabetical => "MOD_LIST_SORT_TYPE_ALPHABETICAL",
                     ModListSortingTypes.LoadOrder => "MOD_LIST_SORT_TYPE_LOAD",
+                    ModListSortingTypes.Author => "MOD_LIST_SORT_TYPE_AUTHOR",
                     _ => throw new ArgumentOutOfRangeException()
                 };
             }

@@ -49,6 +49,12 @@ public class ModDataBuilder
         return this;
     }
 
+    public ModDataBuilder WithAuthor(string modAuthor)
+    {
+        _modDataInternal.Author = modAuthor;
+        return this;
+    }
+
     public ModDataBuilder WithVersion(Version modVersion)
     {
         _modDataInternal.Version = modVersion;
@@ -102,6 +108,7 @@ public class ModDataBuilder
         {
             Guid = _modDataInternal.Guid,
             Name = _modDataInternal.Name,
+            Author = _modDataInternal.Author,
             Version = _modDataInternal.Version,
             DescriptionToken = _modDataInternal.DescriptionToken,
             Icon = _modDataInternal.Icon,
@@ -117,11 +124,13 @@ public class ModDataBuilder
         return modData;
     }
 
+    // don't think too hard about it.
     private struct ModDataInternal
     {
         internal BepInPlugin Plugin = null;
         internal string Guid = "";
         internal string Name = "";
+        internal string Author = "Unknown Author";
         internal Version Version = null;
         internal string DescriptionToken = "MOD_NO_DESCRIPTION";
         internal Sprite Icon = null;
