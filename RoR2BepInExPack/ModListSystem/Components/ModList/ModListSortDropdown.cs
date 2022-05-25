@@ -171,8 +171,8 @@ public class ModListSortDropdown : BaseHGButton
     
     public enum SortDirections
     {
-        Ascending,
-        Descending
+        Descending,
+        Ascending
     }
     
     public struct ModListSort
