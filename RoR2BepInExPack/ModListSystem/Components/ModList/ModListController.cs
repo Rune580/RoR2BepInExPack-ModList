@@ -92,7 +92,8 @@ public class ModListController : MonoBehaviour
     
     private void OnSearch(string text)
     {
-        
+        _mods.SetSearchFilter(text);
+        SetupPool();
     }
 
     private void OnSort(ModListSort sort)
@@ -390,15 +391,15 @@ public class ModListController : MonoBehaviour
     private class ModList
     {
         private ModDataInfo[] _data = Array.Empty<ModDataInfo>();
-        private readonly List<ModDataInfo> _filteredData = new();
+        private ModDataInfo[] _filteredData = Array.Empty<ModDataInfo>();
         private int[] _indexMap;
         private ModListSort _sorting;
         
         private int[] _alphabetical;
-        // private int[] _lastUpdated;
+        private int[] _author;
         private int[] _loadOrder;
 
-        internal int Length => _data.Length;
+        internal int Length => _filteredData.Length;
         
         internal ModListSort Sorting
         {
@@ -429,32 +430,38 @@ public class ModListController : MonoBehaviour
 
         internal ModDataInfo this[int i]
         {
-            get => _data[_indexMap[i]];
+            get => _filteredData[_indexMap[i]];
         }
 
         internal void SetData(ModDataInfo[] data)
         {
             _data = data;
-            _filteredData.Clear();
+            _filteredData = _data;
 
             UpdateIndexMaps();
         }
 
         internal void SetSearchFilter(string filter)
         {
-            
+            _filteredData = _data.Where(info => SearchMatch(info.ModData.Name, filter)).ToArray();
+            UpdateIndexMaps();
         }
 
         private void UpdateIndexMaps()
         {
-            _indexMap = new int[_data.Length];
+            _indexMap = new int[Length];
             
-            _alphabetical = _data
-                .Select((info, i) => new KeyValuePair<int, ModDataInfo>(i, info))
+            KeyValuePair<int, ModDataInfo>[] modIndexPairs = _filteredData.Select((info, i) => new KeyValuePair<int, ModDataInfo>(i, info)).ToArray();
+
+            _alphabetical = modIndexPairs
                 .OrderBy(kvp => kvp.Value.ModData.Name)
                 .Select(kvp => kvp.Key).ToArray();
 
-            _loadOrder = _data
+            _author = modIndexPairs
+                .OrderBy(kvp => kvp.Value.ModData.Author)
+                .Select(kvp => kvp.Key).ToArray();
+
+            _loadOrder = _filteredData
                 .Select((_, i) => i).ToArray();
 
             UpdateSort();
@@ -466,6 +473,9 @@ public class ModListController : MonoBehaviour
             {
                 case ModListSortingTypes.Alphabetical:
                     Array.Copy(_alphabetical, _indexMap, Length);
+                    break;
+                case ModListSortingTypes.Author:
+                    Array.Copy(_author, _indexMap, Length);
                     break;
                 case ModListSortingTypes.LoadOrder:
                     Array.Copy(_loadOrder, _indexMap, Length);
