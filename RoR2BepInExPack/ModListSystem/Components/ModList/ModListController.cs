@@ -93,6 +93,7 @@ public class ModListController : MonoBehaviour
     private void OnSearch(string text)
     {
         _mods.SetSearchFilter(text);
+        UpdateContentSize();
         SetupPool();
     }
 
@@ -109,12 +110,17 @@ public class ModListController : MonoBehaviour
         
         _mods.SetData(mods);
 
+        UpdateContentSize();
+
+        SetupPool();
+    }
+
+    private void UpdateContentSize()
+    {
         float cardHeight = modCardPrefab.GetComponent<RectTransform>().rect.size.y;
         float contentHeight = (spacing * (_mods.Length - 1)) + (cardHeight * _mods.Length);
 
         _content.sizeDelta = new Vector2(_content.sizeDelta.x, contentHeight + padding.bottom + padding.top);
-        
-        SetupPool();
     }
 
     private void UpdateViewBounds()
