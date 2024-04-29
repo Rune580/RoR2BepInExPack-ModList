@@ -3,6 +3,8 @@ using System.Reflection;
 using BepInEx;
 using RoR2;
 using RoR2BepInExPack.LegacyAssetSystem;
+using RoR2BepInExPack.ModCompatibility;
+using RoR2BepInExPack.ReflectionHooks;
 using RoR2BepInExPack.VanillaFixes;
 
 namespace RoR2BepInExPack;
@@ -12,14 +14,14 @@ public class RoR2BepInExPack : BaseUnityPlugin
 {
     public const string PluginGUID = "___riskofthunder" + "." + PluginName;
     public const string PluginName = "RoR2BepInExPack";
-    public const string PluginVersion = "1.0.3";
+    public const string PluginVersion = "1.11.0";
 
     private void Awake()
     {
         Log.Init(Logger);
 
         RoR2Application.isModded = true;
-        
+        HookWatcher.Init();
         InitHooks();
         SetupLanguageTokens();
         ModListSystem.ModListMain.Init();
@@ -35,48 +37,127 @@ public class RoR2BepInExPack : BaseUnityPlugin
         Language.collectLanguageRootFolders += list =>
             list.Add(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Info.Location)!, "Language"));
     }
-    
-    private void InitHooks()
-    {
-        ILLine.Init();
-        SaferAchievementManager.Init();
-        SaferSearchableAttribute.Init();
-        FixConsoleLog.Init();
-
-        LegacyResourcesDetours.Init();
-        LegacyShaderDetours.Init();
-    }
-
     private void OnEnable()
     {
-        ILLine.Enable();
-        SaferAchievementManager.Enable();
-        SaferSearchableAttribute.Enable();
-        FixConsoleLog.Enable();
-
-        LegacyResourcesDetours.Enable();
-        LegacyShaderDetours.Enable();
+        EnableHooks();
     }
 
     private void OnDisable()
     {
-        LegacyShaderDetours.Disable();
-        LegacyResourcesDetours.Disable();
-
-        FixConsoleLog.Disable();
-        SaferSearchableAttribute.Disable();
-        SaferAchievementManager.Disable();
-        ILLine.Disable();
+        DisableHooks();
     }
 
     private void OnDestroy()
     {
+        DestroyHooks();
+
+        HookWatcher.Destroy();
+    }
+    private void InitHooks()
+    {
+        ILLine.Init();
+        AutoCatchReflectionTypeLoadException.Init();
+        SaferAchievementManager.Init();
+        SaferSearchableAttribute.Init();
+        SaferResourceAvailability.Init();
+        FixConsoleLog.Init();
+        FixConVar.Init();
+        FixDeathAnimLog.Init();
+        FixNullBone.Init();
+        FixExtraGameModesMenu.Init();
+        FixProjectileCatalogLimitError.Init();
+        SaferWWise.Init();
+        FixNullEntitlement.Init();
+        FixExposeLog.Init();
+        FixNonLethalOneHP.Init();
+        FixRunScaling.Init();
+        FixCharacterBodyRemoveOldestTimedBuff.Init();
+        FixDedicatedServerMaxPlayerCount.Init();
+
+        LegacyResourcesDetours.Init();
+        LegacyShaderDetours.Init();
+
+        FixMultiCorrupt.Init(Config);
+    }
+
+    private static void EnableHooks()
+    {
+        ILLine.Enable();
+        AutoCatchReflectionTypeLoadException.Enable();
+        SaferAchievementManager.Enable();
+        SaferSearchableAttribute.Enable();
+        SaferResourceAvailability.Enable();
+        FixConsoleLog.Enable();
+        FixConVar.Enable();
+        FixDeathAnimLog.Enable();
+        FixNullBone.Enable();
+        FixExtraGameModesMenu.Enable();
+        FixProjectileCatalogLimitError.Enable();
+        SaferWWise.Enable();
+        FixNullEntitlement.Enable();
+        FixExposeLog.Enable();
+        FixNonLethalOneHP.Enable();
+        FixRunScaling.Enable();
+        FixCharacterBodyRemoveOldestTimedBuff.Enable();
+        FixDedicatedServerMaxPlayerCount.Enable();
+
+        LegacyResourcesDetours.Enable();
+        LegacyShaderDetours.Enable();
+
+        FixMultiCorrupt.Enable();
+    }
+
+    private static void DisableHooks()
+    {
+        FixMultiCorrupt.Disable();
+
+        LegacyShaderDetours.Disable();
+        LegacyResourcesDetours.Disable();
+
+        FixDedicatedServerMaxPlayerCount.Disable();
+        FixCharacterBodyRemoveOldestTimedBuff.Disable();
+        FixRunScaling.Disable();
+        FixNonLethalOneHP.Disable();
+        FixExposeLog.Disable();
+        FixNullEntitlement.Disable();
+        SaferWWise.Disable();
+        FixProjectileCatalogLimitError.Disable();
+        FixExtraGameModesMenu.Disable();
+        FixNullBone.Disable();
+        FixDeathAnimLog.Disable();
+        FixConsoleLog.Disable();
+        FixConVar.Disable();
+        SaferResourceAvailability.Disable();
+        SaferSearchableAttribute.Disable();
+        SaferAchievementManager.Disable();
+        AutoCatchReflectionTypeLoadException.Disable();
+        ILLine.Disable();
+    }
+
+    private static void DestroyHooks()
+    {
+        FixMultiCorrupt.Destroy();
+
         LegacyShaderDetours.Destroy();
         LegacyResourcesDetours.Destroy();
 
+        FixDedicatedServerMaxPlayerCount.Destroy();
+        FixCharacterBodyRemoveOldestTimedBuff.Destroy();
+        FixRunScaling.Destroy();
+        FixNonLethalOneHP.Destroy();
+        FixExposeLog.Destroy();
+        FixNullEntitlement.Destroy();
+        SaferWWise.Destroy();
+        FixProjectileCatalogLimitError.Destroy();
+        FixExtraGameModesMenu.Destroy();
+        FixNullBone.Destroy();
+        FixDeathAnimLog.Destroy();
         FixConsoleLog.Destroy();
+        FixConVar.Destroy();
+        SaferResourceAvailability.Destroy();
         SaferSearchableAttribute.Destroy();
         SaferAchievementManager.Destroy();
+        AutoCatchReflectionTypeLoadException.Destroy();
         ILLine.Destroy();
     }
 }
