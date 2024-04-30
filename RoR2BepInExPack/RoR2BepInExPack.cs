@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using BepInEx;
 using RoR2;
+using RoR2BepInExPack.DynamicModEnablement;
 using RoR2BepInExPack.LegacyAssetSystem;
 using RoR2BepInExPack.ModCompatibility;
 using RoR2BepInExPack.ReflectionHooks;
@@ -24,6 +25,7 @@ public class RoR2BepInExPack : BaseUnityPlugin
         HookWatcher.Init();
         InitHooks();
         SetupLanguageTokens();
+        DynamicModEnablementManager.Init();
         ModListSystem.ModListMain.Init();
     }
 

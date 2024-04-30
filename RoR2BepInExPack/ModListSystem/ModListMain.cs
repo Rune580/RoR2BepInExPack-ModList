@@ -5,6 +5,7 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Bootstrap;
 using RoR2;
+using RoR2BepInExPack.DynamicModEnablement;
 using UnityEngine;
 
 namespace RoR2BepInExPack.ModListSystem;
@@ -16,6 +17,7 @@ public class ModDataInfo
     public GameObject UIPrefab { get; }
 
     public bool hasCustomPrefab { get; }
+    public bool canBeEnabledOrDisabledDynamically { get; }
 
     public ModDataInfo(PluginInfo info, ModData modData)
     {
@@ -25,6 +27,7 @@ public class ModDataInfo
         ModData = modData;
         UIPrefab = null;
         hasCustomPrefab = false;
+        canBeEnabledOrDisabledDynamically = DynamicModEnablementManager.CanModBeDynamicallyEnabledOrDisabled(info.Instance);
     }
 
     public ModDataInfo(PluginInfo info, GameObject uiPrefab)
@@ -33,6 +36,7 @@ public class ModDataInfo
         ModData = null;
         UIPrefab = uiPrefab;
         hasCustomPrefab = true;
+        canBeEnabledOrDisabledDynamically = DynamicModEnablementManager.CanModBeDynamicallyEnabledOrDisabled(info.Instance);
     }
 }
 
