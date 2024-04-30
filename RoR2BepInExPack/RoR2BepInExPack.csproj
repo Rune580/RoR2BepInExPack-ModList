@@ -24,12 +24,10 @@
   <ItemGroup>
     <Content Include="../Language/**" CopyToOutputDirectory="PreserveNewest" LinkBase="Language" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Newtonsoft.Json.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <ThirdPartyDependencies Include="..\ThirdParty\*.dll" InProject="false" />
+    <Reference Include="@(ThirdPartyDependencies)" />
   </ItemGroup>
     
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
@@ -38,6 +36,8 @@
     
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Copy SourceFiles="$(OutputPath)/RoR2BepInExPack.dll;$(OutputPath)/RoR2BepInExPack.pdb" DestinationFolder="../Unity/Packages/RoR2BepInExPack/" />
+    <!-- Copy dependencies into Unity project -->
+    <Copy SourceFiles="@(ThirdPartyDependencies)" DestinationFolder="../Unity/Packages/RoR2BepInExPack/" />
   </Target>
 
 </Project>
