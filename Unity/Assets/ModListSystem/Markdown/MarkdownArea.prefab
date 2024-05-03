@@ -1,0 +1,1090 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8826886450007547237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450007547236}
+  - component: {fileID: 8826886450007547233}
+  - component: {fileID: 8826886450007547238}
+  - component: {fileID: 8826886450007547239}
+  m_Layer: 5
+  m_Name: HoverOutlineScrollRect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450007547236
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450007547237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8826886451364828150}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -0.000015258789}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8826886450007547233
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450007547237}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450007547238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450007547237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8826886450007547239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450007547237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: texUIHighlightBoxOutline
+--- !u!1 &8826886450134909424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450134909427}
+  - component: {fileID: 8826886450134909433}
+  - component: {fileID: 8826886450134909438}
+  - component: {fileID: 8826886450134909439}
+  - component: {fileID: 8826886450134909436}
+  - component: {fileID: 8826886450134909437}
+  - component: {fileID: 8826886450134909426}
+  m_Layer: 0
+  m_Name: Scroll View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450134909427
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886450803068132}
+  - {fileID: 8826886450920655383}
+  - {fileID: 8826886451642899173}
+  - {fileID: 8826886450752039757}
+  m_Father: {fileID: 8826886450203026432}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!222 &8826886450134909433
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450134909438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 8826886450293861044}
+  m_Horizontal: 1
+  m_Vertical: 1
+  m_MovementType: 2
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 40
+  m_Viewport: {fileID: 8826886450920655383}
+  m_HorizontalScrollbar: {fileID: 8826886450752039759}
+  m_VerticalScrollbar: {fileID: 8826886451642899175}
+  m_HorizontalScrollbarVisibility: 1
+  m_VerticalScrollbarVisibility: 2
+  m_HorizontalScrollbarSpacing: 3
+  m_VerticalScrollbarSpacing: -6
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8826886450134909439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1989667288, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinData: {fileID: 0}
+--- !u!114 &8826886450134909436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -758327997, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: skinCleanButton
+--- !u!114 &8826886450134909437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1979810121, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spacingPerElement: 0
+  allowVerticalScrollingWithGamepadSticks: 0
+  stickScale: 0
+  requiredTopLayer: {fileID: 0}
+--- !u!114 &8826886450134909426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450134909424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -103623725, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8826886450203026433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450203026432}
+  - component: {fileID: 8826886450203026435}
+  m_Layer: 5
+  m_Name: MarkdownArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450203026432
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450203026433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886450134909427}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8826886450203026435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450203026433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1002259699, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 8826886450293861044}
+  markdownText: "# RiskOfOptions\n![Animated icon made by UnsavedTrash#0001 on discord](https://cdn.rune580.dev/roo/images/roo-full.gif)\n\nAn
+    API to provide a user interface in game to interact with BepInEx ConfigEntry's.\n\n##
+    Currently supported options\n- CheckBoxes `bool`\n- Sliders `float`\n- StepSliders
+    `float`\n- IntSliders `int`\n- KeyBinds `KeyboardShortcut`\n- String Input Fields
+    `string`\n- Choice DropDowns `Enum`\n- Color Picker `UnityEngine.Color`\n\n###
+    Additional Components\n- GenericButtons\n\n### For feature requests or issues
+    head over to my [repository](https://github.com/Rune580/RiskOfOptions).\n\n##
+    Developer Resources\n* [RiskOfOptions Wiki](https://github.com/Rune580/RiskOfOptions/wiki)\n*
+    [Usage Example](https://github.com/Rune580/RiskOfOptions-Example)\n\n## Getting
+    Started\nFirst you need to grab the latest release from the [Thunderstore](https://thunderstore.io/package/Rune580/Risk_Of_Options/).\nExtract
+    the mod to your plugins folder, and then add a reference to the dll in your project
+    in Visual Studio. [Project->Add Reference...->Browse]\n\nThen add to where ever
+    you will use this.\n```C#\nusing RiskOfOptions;\n```\n\nNext you need to add
+    Risk Of Options as a dependency for your mod.\n```C#\n[BepInDependency(\"com.rune580.riskofoptions\")]\n```\n\nFinally
+    make sure you know how to use [BepInEx Config](https://github.com/risk-of-thunder/R2Wiki/wiki/Configuration\n)\n\nNow
+    you're ready to start adding options.\n\n### Adding an option\nGiven a `ConfigEntry<bool>`\n```C#\nConfigEntry<bool>
+    enableThing = Config.Bind(...);\n\nModSettingsManager.AddOption(new CheckBoxOption(enableThing);\n```\n\nNeed
+    a volume slider?\n```C#\nConfigEntry<float> volume = Config.Bind(...);\n\nModSettingsManager.AddOption(new
+    SliderOption(volume));\n```\n\nEvery option constructor can take a Config for
+    the example above it would be `SliderConfig`.\nSay you need a slider that only
+    goes between 60 - 130. You would do:\n```C#\nModSettingsManager.AddOption(new
+    SliderOption(limitedRangeFloat, new SliderConfig() { min = 60, max = 130 }));\n```\n\nWhat
+    about a slider that goes in increments of 0.15 and is limited between 1 - 5?\n```C#\nModSettingsManager.AddOption(new
+    StepSliderOption(incrementedFloat, new StepSliderConfig() { min = 1, max = 5,
+    increment = 0.15f }));\n```\n\nEnough about floats, let's talk about the spaghetti
+    and meatballs, KeyBinds.\n```C#\nConfigEntry<KeyboardShortcut> keyBind = Config.Bind(...);\n\nModSettingsManager.AddOption(new
+    KeyBindOption(keyBind)); // This also has a KeyBindConfig but can be omitted
+    if defaults are desired.\n```\nAnd that's it, said KeyboardShortcut will show
+    up on the ModOptions menu.\n\nCheckbox and Slider configs can be set with a delegate
+    that will be used to check if said option should be disabled in the menu.\n```C#\nConfigEntry<bool>
+    disableThing = Config.Bind(...);\nConfigEntry<bool> overridenThing = Config.Bind(...);
+    \n\nModSettingsManager.AddOption(new CheckBoxOption(disableThing));\nModSettingsManager.AddOption(new
+    CheckBoxOption(overridenThing, new CheckBoxConfig() { checkIfDisabled = Check
+    }));\n\n...\n\nprivate bool Check()\n{\n    return disabledThing.value;\n}\n```\nWhen
+    `disableThing` is enabled `overridenThing` will show up as non-interactable in
+    the menu.\n\n\"Okay that's all fine but how do I, you know, do stuff when an
+    value is changed?\"\nWell thankfully `ConfigEntry`'s have this innately:\n```C#\nConfigEntry<bool>
+    toggleThing = Config.Bind(...);\n\ntoggleThing.SettingChanged += (object, args)
+    => { Debug.Log(toggleThing.Value) };\n```\nOf course when an option changes the
+    value of a passed `ConfigEntry`, the value updates in real time,\nso in some
+    cases where you are checking the value of the entry directly you don't need to
+    do anything.\n\nThere may be cases where you just want a convenient button to
+    open your own menu, as such you can do this:\n```C#\nModSettingsManager.AddOption(new
+    GenericButtonOption(\"Custom Menu\", \"Misc\", \"Configure stuff in here\", \"Open
+    Custom Menu\", OpenMenu));\n\nprivate void OpenMenu()\n{\n    /// Do stuff\n}\n```\nThe
+    GenericButtonOption may be used to provide an entry point for opening your custom
+    GUI's.\n\n### Setting the description of the mod\n```C#\nModSettingsManager.SetModDescription(\"Describe
+    your mod in incredible detail over the course of the next 2 hours\");\n```\n\n###
+    Setting the icon of the mod\n```C#\nSprite icon = ...;\n\nModSettingsManager.SetModIcon(icon);\n```\n\n#
+    Quick Showcase\n[Showcase](https://gfycat.com/GloomyShowyArrowana)\n\n# Contact\n\nDiscord:
+    @rune\n\nGithub: Rune580\n\n# Changelog\n    2.7.1:\n      StringInputFields
+    have improved newline behavior.\n        - InputFieldConfig has a new field `lineType`,
+    it represents TMP's `lineType` enum.\n        - SubmitEnum is now marked with
+    the `Flags` attribute, should allow for more fine-tuned input field behavior.\n       
+    - `Shift` + `Enter` will always insert a newline, if the StringInputField is
+    configured to allow newlines, without submitting.\n      Because of the above
+    changes, StringInputFields may behave differently to prior versions. If you relied
+    on the \n        previous behavior, sorry for making more work for you, but this
+    should make input fields be more reliable.\n      In addition the default behavior
+    for StringInputFields are `MultiLineSubmit` as this mimics the previous\n       
+    behavior the closest.\n\n    2.7.0:\n      All numeric InputFields now properly
+    use InvariantCulture, for example numbers are formatted as `1,000,000.20`.\n       
+    - RiskOfOptions exposes an option to change this behavior in-game.\n      RiskOfOptions
+    option menu.\n      Experimental support for Prefabs as mod icons.\n        -
+    The root object's RectTransform must have a width and height of 45.\n      Animated
+    icon has been updated.\n\n    2.6.1:\n      Forgot to include some assets that
+    are required for the color picker.\n\n    2.6.0:\n      Added Method for setting
+    mod descriptions with a language token.\n      Added event when the mod options
+    panel is closed.\n      Slight behaviour change for color wheel, (I did this
+    like a year ago and forgot to push it out in an update, so here you go.)\n     
+    Any other commits that happened between last year and now.\n\n    2.5.3:\n     
+    Merged PR by Bubbet https://github.com/Rune580/RiskOfOptions/pull/28\n       
+    - Abstracts references to bepinexconfig out.\n        - Allows mods to extend
+    off of RoO's options.\n      Updated to preview C# language.\n\n    2.5.2:\n     
+    Fixed descriptions not wrapping.\n\n    2.5.1:\n      Minor improvements to the
+    layout of the mod options menu.\n      Fixed some minor stutters when opening
+    the settings menu for the first time.\n      Removed HookGenPatcher/MMHook as
+    a dependency.\n\n    2.5.0:\n      Added ColorOption.\n      Added ColorPickerUtil
+    for manually opening a color picker.\n      Added 2 new submit modes for input
+    fields:\n        - OnExitOrSubmit\n        - OnSubmit\n        These can be used
+    with the `submitOn` Field in the InputFieldConfig.\n      Fixed an issue where
+    having multiple input fields causes hitching.\n      Fixed an issue where input
+    fields wouldn't visually revert.\n\n    2.4.2:\n      Sliders can now have their
+    values be manually set in the text box. No more finagling the slider to get the
+    value you want.\n        The future is now!\n\n    2.4.1:\n      Fixed category
+    indicators taking up more vertical space than intended.\n\n    2.4.0:\n     
+    Added IntSlider option, which is just a normal slider but it accepts an ConfigEntry<int>
+    instead.\n\n    2.3.2:\n      Added overrides for modGuid and modName when adding
+    an option.\n      CheckBox is now a prefab instead of being copied from a button
+    in game. What does that mean for the normal user?\n        realistically nothing
+    at all, you shouldn't notice anything different. For the dev however, this puts
+    us a step closer\n        to having RiskOfOptions ui elements be accessible to
+    other mods.\n\n    2.3.1:\n      Disable functionality is now fully implemented
+    on all simple options.\n\n    2.3.0:\n      Quite a few things in this update,
+    as always let me know if you have any issues.\n        - Added ChoiceOption,
+    takes an CongiEntry<enum>.\n        - Removed dependency on R2API, I didn't really
+    use it anyways, now you don't have to worry about an unnecessary dependency.\n           
+    haha dependencies bad ;))))))))))))))))\n        - Fixed animation issues with
+    the Mod Options menu while playing in singleplayer.\n        - Added workaround
+    for when a mod embeds it's own settings api (the reason why one would do this
+    alludes me...),\n            as they can break the Mod Options panel.\n\n   
+    2.2.0 - Added GenericButtonOption which allows for devs to supply a UnityAction
+    that is invoked when the button is pressed.\n    Cleaned up a few things. Should
+    work for the newest patch, let me know if you find any issues.\n\n    2.1.0 -
+    Added StringInputFieldOption. Configuration option `restartRequired` has been
+    fully implemented,\n    set this to true to show a restart warning when the option
+    is modified. Description panels now scroll.\n\n    2.0.0 - Massive Rewrite of
+    the entire mod. Now exclusively uses BepInEx ConfigEntry's.\n    Completely new
+    UI, with a working revert button. Added Stepped Slider, and KeyBind options.\n   
+    Mods dependent on 1.0 will not work with 2.0\n\n    1.0.4 - Quick update for
+    SOTV.\n\n\t1.0.3 - Added R2API as a dependency because I forgot about that. Also
+    I'm currently rewriting ROO,\n\tso hopefully the next update should be a pretty
+    big one. No ETA on that, but progress is good\n\tso far.\n"
+  markdownBlockParser: {fileID: 11400000, guid: 614fbf400bd9b581fa841314436bbb83,
+    type: 2}
+--- !u!1 &8826886450293359647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450293359646}
+  - component: {fileID: 8826886450293359640}
+  - component: {fileID: 8826886450293359641}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450293359646
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450293359647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8826886451229412388}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 126.692474, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8826886450293359640
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450293359647}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450293359641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450293359647}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8826886450293861045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450293861044}
+  m_Layer: 0
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450293861044
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450293861045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8826886450920655383}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: -40, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &8826886450752039746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450752039757}
+  - component: {fileID: 8826886450752039752}
+  - component: {fileID: 8826886450752039753}
+  - component: {fileID: 8826886450752039758}
+  - component: {fileID: 8826886450752039759}
+  - component: {fileID: 8826886450752039756}
+  m_Layer: 5
+  m_Name: Scrollbar Horizontal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450752039757
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886451229412388}
+  m_Father: {fileID: 8826886450134909427}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 2, y: 0.46728137, z: -2.8461692}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 20}
+  m_Pivot: {x: 0, y: 0}
+--- !u!222 &8826886450752039752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450752039753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3254902, g: 0.40392157, b: 0.47058824, a: 0.7607843}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8826886450752039758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -103623725, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8826886450752039759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 701432784, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.3254902, g: 0.40392157, b: 0.47058824, a: 1}
+    m_HighlightedColor: {r: 0.9882353, g: 1, b: 0.69411767, a: 0.7411765}
+    m_PressedColor: {r: 0.7411765, g: 0.7529412, b: 0.44313726, a: 0.9843137}
+    m_SelectedColor: {r: 0.9882353, g: 1, b: 0.69411767, a: 0.7411765}
+    m_DisabledColor: {r: 0.25490198, g: 0.2, b: 0.2, a: 0.7137255}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8826886450752039753}
+  m_HandleRect: {fileID: 8826886450293359646}
+  m_Direction: 0
+  m_Value: 0
+  m_Size: 0.9777178
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  allowAllEventSystems: 0
+  scaleButtonOnHover: 1
+  showImageOnHover: 0
+  imageOnHover: {fileID: 0}
+  imageOnInteractable: {fileID: 0}
+--- !u!114 &8826886450752039756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450752039746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -103623725, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8826886450803068133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450803068132}
+  - component: {fileID: 8826886450803068129}
+  - component: {fileID: 8826886450803068134}
+  - component: {fileID: 8826886450803068135}
+  m_Layer: 0
+  m_Name: ImagePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &8826886450803068132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450803068133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8826886450134909427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8826886450803068129
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450803068133}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450803068134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450803068133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.11764706, g: 0.13725491, b: 0.14901961, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8826886450803068135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450803068133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: texUIPopupRect
+--- !u!1 &8826886450920655380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886450920655383}
+  - component: {fileID: 8826886450920655377}
+  - component: {fileID: 8826886450920655382}
+  m_Layer: 0
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886450920655383
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450920655380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886450293861044}
+  m_Father: {fileID: 8826886450134909427}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &8826886450920655377
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450920655380}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886450920655382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886450920655380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
+--- !u!1 &8826886451054584363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886451054584362}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886451054584362
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451054584363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886451364828150}
+  m_Father: {fileID: 8826886451642899173}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8826886451229412389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886451229412388}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886451229412388
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451229412389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886450293359646}
+  m_Father: {fileID: 8826886450752039757}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.4921875, y: 2, z: 0.31435284}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8826886451364828151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886451364828150}
+  - component: {fileID: 8826886451364828147}
+  - component: {fileID: 8826886451364828144}
+  - component: {fileID: 8826886451364828145}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886451364828150
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451364828151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886450007547236}
+  m_Father: {fileID: 8826886451054584362}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8826886451364828147
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451364828151}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886451364828144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451364828151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8826886451364828145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451364828151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1334010080, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: texUICleanButton
+--- !u!1 &8826886451642899194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826886451642899173}
+  - component: {fileID: 8826886451642899169}
+  - component: {fileID: 8826886451642899174}
+  - component: {fileID: 8826886451642899175}
+  - component: {fileID: 8826886451642899172}
+  m_Layer: 5
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8826886451642899173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451642899194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8826886451054584362}
+  m_Father: {fileID: 8826886450134909427}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &8826886451642899169
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451642899194}
+  m_CullTransparentMesh: 0
+--- !u!114 &8826886451642899174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451642899194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -103623725, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8826886451642899175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451642899194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 701432784, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.3254902, g: 0.40392157, b: 0.47058824, a: 1}
+    m_HighlightedColor: {r: 0.9882353, g: 1, b: 0.69411767, a: 0.7411765}
+    m_PressedColor: {r: 0.7411765, g: 0.7529412, b: 0.44313726, a: 0.9843137}
+    m_SelectedColor: {r: 0.9882353, g: 1, b: 0.69411767, a: 0.7411765}
+    m_DisabledColor: {r: 0.25490198, g: 0.2, b: 0.2, a: 0.7137255}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8826886451364828144}
+  m_HandleRect: {fileID: 8826886451364828150}
+  m_Direction: 2
+  m_Value: 0
+  m_Size: 1
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  allowAllEventSystems: 0
+  scaleButtonOnHover: 1
+  showImageOnHover: 1
+  imageOnHover: {fileID: 8826886450007547238}
+  imageOnInteractable: {fileID: 0}
+--- !u!114 &8826886451642899172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826886451642899194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -103623725, guid: 951ce57ad9993c1f840a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

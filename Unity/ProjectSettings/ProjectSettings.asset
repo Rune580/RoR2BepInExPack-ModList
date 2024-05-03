@@ -326,6 +326,9 @@ PlayerSettings:
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
     m_Automatic: 1
+  - m_BuildTarget: LinuxStandaloneSupport
+    m_APIs: 1500000011000000
+    m_Automatic: 0
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 0
@@ -606,19 +609,19 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    7: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    13: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    14: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    19: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    21: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    25: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    27: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    28: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    29: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    30: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    32: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
-    33: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack
+    1: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    7: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    13: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    14: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    19: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    21: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    25: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    27: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    28: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    29: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    30: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    32: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
+    33: riskofrain2;TK_ADDRESSABLE;bbepis-bepinexpack;RISKOFRAIN2
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

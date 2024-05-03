@@ -71,6 +71,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+!/**/*.meta
+
 !/[Pp]ackages/manifest.json
 !/[Pp]ackages/RoR2BepInExPack/**
 !/[Pp]ackages/Risk of Rain 2/

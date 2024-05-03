@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ModListSystem.Editor
 {
-    [UnityEditor.CustomEditor(typeof(ModListController))]
+    [CustomEditor(typeof(ModListController))]
     public class ModListControllerEditor : UnityEditor.Editor
     {
         private int _testCount = 30;
