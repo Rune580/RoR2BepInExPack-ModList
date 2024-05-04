@@ -19,18 +19,31 @@ public class CodeBlockObject : BaseMarkdownBlockObject
         if (block is not CodeBlock codeBlock)
             return;
 
-        var rt = GetComponent<RectTransform>();
-        rt.anchoredPosition = new Vector2(0, -renderCtx.YPos);
+        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
-        foreach (var code in codeBlock.Lines.Lines)
+        var codeLines = codeBlock.Lines.Lines;
+        int emptyLines = 0;
+        
+        foreach (var code in codeLines)
         {
+            if (string.IsNullOrEmpty(code.ToString()))
+            {
+                emptyLines++;
+                continue;
+            }
+
+            for (int i = 0; i < emptyLines; i++)
+                AddLine(" ", renderCtx);
+            
+            emptyLines = 0;
+            
             AddLine(code, renderCtx);
         }
 
-        renderCtx.YPos += verticalLayout.preferredHeight;
+        renderCtx.YPos += verticalLayout.padding.top + verticalLayout.padding.bottom;
         
         // Bottom padding
-        renderCtx.YPos += 16f;
+        renderCtx.YPos += renderCtx.FontSize;
     }
 
     protected void AddLine(StringLine stringLine, RenderContext renderCtx) => AddLine(stringLine.ToString(), renderCtx);

@@ -12,5 +12,6 @@ public class RenderContext
 
     public Rect ViewportRect;
     public float FontSize;
+    public float XPos;
     public float YPos;
 }

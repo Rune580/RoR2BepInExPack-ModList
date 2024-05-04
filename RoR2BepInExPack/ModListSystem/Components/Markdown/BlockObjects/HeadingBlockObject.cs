@@ -15,7 +15,7 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
         if (headingBlock.Inline is null)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(0, -renderCtx.YPos);
+        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
         var inlineCtx = new InlineContext
         {
@@ -30,12 +30,12 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
             renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
         }
 
-        renderCtx.YPos += inlineCtx.YPos;
-
-        // Add bottom padding
-        renderCtx.YPos += renderCtx.FontSize * 0.4f;
+        renderCtx.YPos += inlineCtx.YPos + renderCtx.FontSize * 0.3f;;
         
         Height += renderCtx.YPos - currentYPos;
+        
+        // Add bottom padding
+        renderCtx.YPos += renderCtx.FontSize * 0.75f;
         
         line.SetActive(headingBlock.Level < 3);
     }

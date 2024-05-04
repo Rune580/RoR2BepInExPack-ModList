@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: -1913079121, guid: 0057b34c0b42376489fdbe84e831f570, type: 3}
   m_Name: Block Parser
   m_EditorClassIdentifier: 
+  fontSize: 16
   inlineParser: {fileID: 11400000, guid: 3a5ba67d0bc500a6e91aedd10e851cd1, type: 2}
   converters:
   - blockType: 28
     prefab: {fileID: 5135084280662523739, guid: 19a6615f7d4ab4d7bba3562683dc5862,
       type: 3}
   - blockType: 31
-    prefab: {fileID: 5135084280662523739, guid: 9061dbc1780cee9fdb9ed9e69645693d,
+    prefab: {fileID: 5135084280662523739, guid: 5a5726db6f8016e61aa79740d6c0f158,
       type: 3}
   - blockType: 20
     prefab: {fileID: 5135084280662523739, guid: 977db38a02f46a7a78482ff85efd6386,
       type: 3}
   - blockType: 19
     prefab: {fileID: 9137694074619935415, guid: 28ecdca7f3260628db6b094264290a32,
+      type: 3}
+  - blockType: 22
+    prefab: {fileID: 5135084280662523739, guid: 9061dbc1780cee9fdb9ed9e69645693d,
+      type: 3}
+  - blockType: 23
+    prefab: {fileID: 5135084280662523739, guid: 1034e894d16dc645aa99bee1d475b8d3,
       type: 3}

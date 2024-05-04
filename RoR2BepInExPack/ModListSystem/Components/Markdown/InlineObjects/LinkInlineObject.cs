@@ -8,5 +8,15 @@ public class LinkInlineObject : BaseMarkdownInlineObject
     {
         if (inline is not LinkInline linkInline)
             return;
+
+        foreach (var subInline in linkInline)
+        {
+            if (subInline is LiteralInline && !linkInline.IsImage)
+                inlineCtx.AddStyleTags("u", "color=#00DDFF");
+            
+            renderCtx.InlineParser.Parse(subInline, RectTransform, renderCtx, inlineCtx);
+            
+            inlineCtx.RemoveStyleTags("u", "color=#00DDFF");
+        }
     }
 }

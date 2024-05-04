@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Markdig;
+using Markdig.Syntax;
 using RoR2BepInExPack.ModListSystem.Components.Markdown;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using UnityEngine;
@@ -23,8 +25,12 @@ public class MarkdownBlockParser : ScriptableObject
     public GameObject[] Parse(string markdown, RectTransform target)
     {
         var blockObjects = new List<GameObject>();
+
+        var pipeline = new MarkdownPipelineBuilder()
+            .UseAdvancedExtensions()
+            .Build();
         
-        var doc = Markdig.Markdown.Parse(markdown);
+        var doc = Markdig.Markdown.Parse(markdown, pipeline);
         
         var renderCtx = new RenderContext
         {
@@ -37,25 +43,11 @@ public class MarkdownBlockParser : ScriptableObject
 
         foreach (var block in doc)
         {
-            if (!Enum.TryParse<BlockType>(block.GetType().Name, out var blockType))
-            {
-                Debug.LogWarning($"Could not parse markdown block {block.GetType()}!");
-                continue;
-            }
-
-            var prefab = GetPrefab(blockType);
-            if (!prefab)
+            var instance = Parse(block, target, renderCtx);
+            if (!instance)
                 continue;
             
-            var instance = Instantiate(prefab, target);
-
             blockObjects.Add(instance);
-            
-            var blockParser = instance.GetComponent<BaseMarkdownBlockObject>();
-            if (!blockParser)
-                continue;
-            
-            blockParser.Parse(block, renderCtx);
         }
 
         var contentSize = target.sizeDelta;
@@ -63,6 +55,29 @@ public class MarkdownBlockParser : ScriptableObject
         target.sizeDelta = contentSize;
 
         return blockObjects.ToArray();
+    }
+    
+    public GameObject Parse(Block block, RectTransform target, RenderContext renderCtx)
+    {
+        if (!Enum.TryParse<BlockType>(block.GetType().Name, out var blockType))
+        {
+            Debug.LogWarning($"Could not parse markdown block {block.GetType()}!");
+            return null;
+        }
+
+        var prefab = GetPrefab(blockType);
+        if (!prefab)
+            return null;
+            
+        var instance = Instantiate(prefab, target);
+        
+        var blockParser = instance.GetComponent<BaseMarkdownBlockObject>();
+        if (!blockParser)
+            return instance;
+            
+        blockParser.Parse(block, renderCtx);
+
+        return instance;
     }
 
     private GameObject GetPrefab(BlockType blockType)

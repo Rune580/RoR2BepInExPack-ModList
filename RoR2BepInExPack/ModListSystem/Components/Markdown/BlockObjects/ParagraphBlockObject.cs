@@ -13,8 +13,7 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
         if (paragraphBlock.Inline is null)
             return;
 
-        var rt = GetComponent<RectTransform>();
-        rt.anchoredPosition = new Vector2(0, -renderCtx.YPos);
+        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         var inlineCtx = new InlineContext
         {
@@ -24,7 +23,7 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
         foreach (var inline in paragraphBlock.Inline)
         {
             inlineCtx.LastItem = inline.NextSibling is null;
-            renderCtx.InlineParser.Parse(inline, rt, renderCtx, inlineCtx);
+            renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
         }
         
         renderCtx.YPos += inlineCtx.YPos;

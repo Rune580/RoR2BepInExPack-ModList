@@ -23,17 +23,29 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
         var text = literalInline.ToString();
 
         SetText(text, renderCtx, inlineCtx);
+
+        if (inline.NextSibling is LinkInline && text.EndsWith(" "))
+            inlineCtx.XPos -= TextWidthApproximation(" ", FontStyles.Normal);
     }
 
     protected void SetText(string text, RenderContext renderCtx, InlineContext inlineCtx)
     {
         AnchoredYPos = -inlineCtx.YPos;
 
-        var lineWidths = TextWidthMultiLine(text, inlineCtx.XPos, renderCtx.ViewportRect.width, out var textPerLine);
+        var style = FontStyles.Normal;
+
+        if (inlineCtx.HasTag("b"))
+            style |= FontStyles.Bold;
+        if (inlineCtx.HasTag("i"))
+            style |= FontStyles.Italic;
+
+        var lineWidths = TextWidthMultiLine(text, style, inlineCtx.XPos, renderCtx.ViewportRect.width, out var textPerLine);
         var textWithoutLastLine = string.Join(" ", textPerLine.AsEnumerable().Take(textPerLine.Length - 1));
         var height = TextHeight(textWithoutLastLine);
-        
-        label.SetText($"<line-indent={inlineCtx.XPos}px>{text}</line-indent>");
+
+        label.SetText(!string.IsNullOrEmpty(inlineCtx.Styling)
+            ? $"<line-indent={inlineCtx.XPos}px>{inlineCtx.Styling.Replace("{0}", text)}</line-indent>"
+            : $"<line-indent={inlineCtx.XPos}px>{text}</line-indent>");
 
         inlineCtx.XPos = lineWidths.Last();
 
@@ -47,7 +59,7 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
         }
     }
 
-    private float[] TextWidthMultiLine(string text, float xOffset, float maxWidth, out string[] textPerLine)
+    private float[] TextWidthMultiLine(string text, FontStyles style, float xOffset, float maxWidth, out string[] textPerLine)
     {
         var words = text.Split(' ');
 
@@ -55,14 +67,14 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
         List<float> lineWidths = [xOffset];
         List<string> textPerLineList = [""];
 
-        var spaceWidth = TextWidthApproximation(" ");
+        var spaceWidth = TextWidthApproximation(" ", FontStyles.Normal);
 
         foreach (var word in words)
         {
             var lineWidth = lineWidths[line];
             var lineText = textPerLineList[line];
 
-            var wordWidth = TextWidthApproximation(word) + spaceWidth;
+            var wordWidth = TextWidthApproximation(word, style) + spaceWidth;
             
             if (lineWidth + wordWidth >= maxWidth)
             {
@@ -88,19 +100,21 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
             textPerLineList[line] = lineText;
         }
 
+        if (!text.EndsWith(" "))
+            lineWidths[line] -= spaceWidth;
+
         textPerLine = textPerLineList.ToArray();
 
         return lineWidths.ToArray();
     }
     
-    private float TextWidthApproximation(string text)
+    private float TextWidthApproximation(string text, FontStyles style)
     {
         if (!label)
             return 0;
         
         var fontSize = label.fontSize;
         TMP_FontAsset fontAsset = label.font;
-        FontStyles style = label.fontStyle;
 
         // Compute scale of the target point size relative to the sampling point size of the font asset.
         float pointSizeScale = fontSize / (fontAsset.faceInfo.pointSize * fontAsset.faceInfo.scale);
@@ -122,7 +136,7 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
     }
 
     // Yes I know this is very lazy.
-    private float TextHeight(string text)
+    protected float TextHeight(string text)
     {
         if (!label)
             return 0;

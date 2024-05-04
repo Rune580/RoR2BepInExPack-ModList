@@ -13,8 +13,7 @@ public class FencedCodeBlockObject : CodeBlockObject
         if (block is not FencedCodeBlock fencedCodeBlock)
             return;
 
-        var rt = GetComponent<RectTransform>();
-        rt.anchoredPosition = new Vector2(0, -renderCtx.YPos);
+        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         var codeLines = fencedCodeBlock.Lines.Lines;
         int emptyLines = 0;
@@ -35,10 +34,10 @@ public class FencedCodeBlockObject : CodeBlockObject
             AddLine(code, renderCtx);
         }
 
-        renderCtx.YPos += verticalLayout.padding.vertical;
+        renderCtx.YPos += verticalLayout.padding.top + verticalLayout.padding.bottom;
         
         // Bottom padding
-        renderCtx.YPos += 16f;
+        renderCtx.YPos += renderCtx.FontSize;
     }
     
     
