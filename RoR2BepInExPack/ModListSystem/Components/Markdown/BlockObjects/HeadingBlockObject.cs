@@ -30,6 +30,8 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
             renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
         }
 
+        inlineCtx.LastItem = false;
+
         renderCtx.YPos += inlineCtx.YPos + renderCtx.FontSize * 0.3f;;
         
         Height += renderCtx.YPos - currentYPos;

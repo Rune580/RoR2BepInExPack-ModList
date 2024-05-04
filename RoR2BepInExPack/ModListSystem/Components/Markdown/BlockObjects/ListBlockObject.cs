@@ -12,15 +12,13 @@ public class ListBlockObject : BaseMarkdownBlockObject
         
         RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
-        var subCtx = new RenderContext
+        var subCtx = new RenderContext(renderCtx)
         {
-            BlockParser = renderCtx.BlockParser,
-            InlineParser = renderCtx.InlineParser,
-            ViewportRect = renderCtx.ViewportRect,
-            FontSize = renderCtx.FontSize,
             XPos = renderCtx.XPos + renderCtx.FontSize,
             YPos = 0
         };
+        
+        subCtx.ViewportRect = new Rect(renderCtx.ViewportRect.min, renderCtx.ViewportRect.size - new Vector2(subCtx.XPos, 0));
         
         foreach (var listItemBlock in listBlock)
         {

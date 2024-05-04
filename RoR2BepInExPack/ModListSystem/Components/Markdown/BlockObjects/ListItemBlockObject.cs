@@ -22,7 +22,8 @@ public class ListItemBlockObject : BaseMarkdownBlockObject
         
         if (listBlock.IsOrdered)
         {
-            
+            // Todo
+            Debug.LogWarning("Ordered lists aren't fully supported yet!");
         }
         else
         {
@@ -40,13 +41,8 @@ public class ListItemBlockObject : BaseMarkdownBlockObject
         
         RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
-        var subCtx = new RenderContext
+        var subCtx = new RenderContext(renderCtx)
         {
-            BlockParser = renderCtx.BlockParser,
-            InlineParser = renderCtx.InlineParser,
-            ViewportRect = renderCtx.ViewportRect,
-            FontSize = renderCtx.FontSize,
-            XPos = renderCtx.XPos,
             YPos = 0
         };
 
