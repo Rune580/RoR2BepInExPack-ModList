@@ -40,7 +40,8 @@ public class CodeBlockObject : BaseMarkdownBlockObject
             AddLine(code, renderCtx);
         }
 
-        renderCtx.YPos += verticalLayout.padding.top + verticalLayout.padding.bottom;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(RectTransform);
+        renderCtx.YPos += verticalLayout.preferredHeight;
         
         // Bottom padding
         renderCtx.YPos += renderCtx.FontSize;
@@ -59,7 +60,5 @@ public class CodeBlockObject : BaseMarkdownBlockObject
         
         lineLabel.SetText(text);
         line.SetActive(true);
-        
-        renderCtx.YPos += lineLabel.preferredHeight + verticalLayout.spacing;
     }
 }

@@ -18,6 +18,8 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
             Debug.Log($"Unhandled Emphasis: {emphasisInline.DelimiterChar}");
         }
 
+        inlineCtx.LastItem = false;
+        
         foreach (var subInline in emphasisInline)
         {
             if (bold)

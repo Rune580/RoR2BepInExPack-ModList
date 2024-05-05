@@ -1,5 +1,6 @@
 using Markdig.Syntax;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 
@@ -33,8 +34,9 @@ public class FencedCodeBlockObject : CodeBlockObject
             
             AddLine(code, renderCtx);
         }
-
-        renderCtx.YPos += verticalLayout.padding.top + verticalLayout.padding.bottom;
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(RectTransform);
+        renderCtx.YPos += verticalLayout.preferredHeight;
         
         // Bottom padding
         renderCtx.YPos += renderCtx.FontSize;

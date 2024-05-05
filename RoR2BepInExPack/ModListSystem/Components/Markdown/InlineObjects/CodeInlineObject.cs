@@ -21,19 +21,9 @@ public class CodeInlineObject : LiteralInlineObject
         markLabel.fontSize = inlineCtx.FontSize;
 
         var text = codeInline.Content;
-
-        var xPos = inlineCtx.XPos;
-        markLabel.SetText($"<mark=#252525 padding=100,100,100,100>{text}</mark>");
-
-        var bgSize = markBg.sizeDelta;
-        bgSize.x = markLabel.preferredWidth + 8;
-        markBg.sizeDelta = bgSize;
-
-        var bgPos = markBg.anchoredPosition;
-        bgPos.x += xPos - 3;
-        markBg.anchoredPosition = bgPos;
         
         SetText(text, renderCtx, inlineCtx);
+        markLabel.SetText($"<mark=#252525 padding=5,5,5,5>{label.text}</mark>");
         
         Width = label.preferredWidth;
         Height = label.preferredHeight;

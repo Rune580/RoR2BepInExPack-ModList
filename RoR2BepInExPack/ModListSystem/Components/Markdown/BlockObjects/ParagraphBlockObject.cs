@@ -25,6 +25,8 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
             inlineCtx.LastItem = inline.NextSibling is null;
             renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
         }
+
+        inlineCtx.LastItem = false;
         
         renderCtx.YPos += inlineCtx.YPos;
 
