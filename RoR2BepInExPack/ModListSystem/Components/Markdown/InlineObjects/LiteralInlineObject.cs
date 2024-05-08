@@ -1,13 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Markdig.Syntax.Inlines;
 using RoR2.UI;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using TMPro;
+using UnityEngine.UI;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
 
 public class LiteralInlineObject : BaseMarkdownInlineObject
 {
+    private static readonly Regex UnicodeRegex = new(@"\\u([a-zA-Z0-9]*)");
+    
     public HGTextMeshProUGUI label;
     
     public override void Parse(Inline inline, RenderContext renderCtx, InlineContext inlineCtx)
@@ -27,6 +32,8 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
 
     protected void SetText(string text, RenderContext renderCtx, InlineContext inlineCtx)
     {
+        text = UnicodeRegex.Replace(text, @"\U\\U000$1\E");
+        
         AnchoredYPos = -inlineCtx.YPos;
 
         var style = FontStyles.Normal;
@@ -63,6 +70,7 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
         }
         else if (inlineCtx.LastItem)
         {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(RectTransform);
             inlineCtx.YPos += label.preferredHeight;
         }
     }
@@ -119,40 +127,6 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
 
         lineWidths[line] += wordWidth;
         textPerLineList[line] += word;
-
-        // foreach (var word in words)
-        // {
-        //     var lineWidth = lineWidths[line];
-        //     var lineText = textPerLineList[line];
-        //
-        //     var wordWidth = TextWidthApproximation(word, style) + spaceWidth;
-        //     
-        //     if (lineWidth + wordWidth >= maxWidth)
-        //     {
-        //         lineWidth = 0;
-        //         lineWidths.Add(lineWidth);
-        //
-        //         if (lineText.Length > 0)
-        //         {
-        //             textPerLineList[line] = lineText.Substring(0, lineText.Length - 1);
-        //             lineWidths[line] -= spaceWidth;
-        //         }
-        //         
-        //         line++;
-        //         
-        //         textPerLineList.Add("");
-        //         lineText = textPerLineList[line];
-        //     }
-        //
-        //     lineText += $"{word} ";
-        //
-        //     lineWidth += wordWidth;
-        //     lineWidths[line] = lineWidth;
-        //     textPerLineList[line] = lineText;
-        // }
-        //
-        // if (!text.EndsWith(" "))
-        //     lineWidths[line] -= spaceWidth;
 
         textPerLine = textPerLineList.ToArray();
 
@@ -212,8 +186,17 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
     {
         if (!label)
             return 0;
+
+        if (string.IsNullOrEmpty(text))
+        {
+            label.SetText(" ");
+        }
+        else
+        {
+            label.SetText(text);
+        }
         
-        label.SetText(text);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(label.rectTransform);
         
         return label.preferredHeight;
     }

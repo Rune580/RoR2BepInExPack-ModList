@@ -220,6 +220,1060 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &357811429
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1799703890}
+    m_Modifications:
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909437, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: requiredTopLayer
+      value: 
+      objectReference: {fileID: 1799703891}
+    - target: {fileID: 8826886450134909438, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Name
+      value: MarkdownArea (LC.TooManyEmotes)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: markdownText
+      value: '# TooManyEmotes
+
+        ### V50 Compatible!
+
+
+        ## There are
+        never Too Many Emotes!
+
+        <strong>This mod adds a ton of new emotes
+        to the game, which can be purchased in the store.</strong><br>
+
+        If
+        you hate progression and just want to dance, you set all emotes to be unlocked
+        in the config. All clients will sync to the server''s settings.<br><br>
+
+        With
+        this mod, you will be able to break dance over your teammates'' corpses!<br>
+
+        Currently,
+        there are There are currently over 200 emotes, and (likely) more on the way!<br>
+
+        These
+        include common emotes, such as waving, taunting, crying, etc.<br>
+
+        Various
+        dances are also included! You can see a preview of them in the gif down below!
+
+        <br>
+
+
+        ###
+        Supports InputUtils
+
+
+        - Any relevant hotkeys for this mod can be
+        managed in the in-game keybind menu.
+
+        - InputUtils is not a dependency,
+        but is recommended!
+
+        <br>
+
+
+        ## Over 200 Emotes!
+
+
+        -
+        Though there are a lot of emotes, existing emotes will be continued to be
+        polished in future updates when needed.<br>
+
+        - Emotes can be purchased
+        in the terminal shop by typing "Emotes". You can read more about it below.
+
+        -
+        (This count may actually be just under 200 as I had to remove some emotes
+        to fix some animations at the time of typing this message)
+
+        <br>
+
+        ###
+        Here''s a preview of some emotes!
+
+
+        ![Emotes Preview](https://i.imgur.com/d21cmPX.gif)
+
+
+        ##
+        Emote Radial Menu
+
+
+        - Emote radial menu is included!
+
+        - By
+        default, you can open the radial menu by pressing the backtick/tilde key.
+        This can be changed in the config.
+
+        - Not shown in the gif below,
+        but you can have multiple pages of emotes now! (1.3.5)
+
+
+        ![Radial
+        Menu](https://i.imgur.com/jf6z3NS.gif)
+
+
+        ## Music and Props!
+
+
+        -
+        Various emotes may include music and external props. (props are not in-game
+        items... yet?)
+
+        - By default, music will only be played if a boombox
+        is nearby, and if it''s not already playing music from an emote.
+
+        -
+        You can mute, or adjust the emote audio volume in the emote menu. More audio
+        settings can be tweaked in the config.
+
+        - The boombox requirement
+        can be disabled in the config.
+
+        - Select emotes with audio have exceptions
+        to the boombox requirement, such as musical instruments, or other sound effects.
+
+        -
+        Only the player who initiated an emote will play music from an audio source.
+
+        -
+        Emote music volume increases with the number of players syncing with that
+        emote. (slightly)
+
+        <br><br>
+
+
+        ## Grabbable Emote Props as
+        Scrap (new in 2.1.2)
+
+
+        - Various emote props can be found on moons
+        as scrap.
+
+        - These props can perform emotes when interacted with.
+
+        -
+        This does require a separate mod called [TooManyEmotesScrap](https://thunderstore.io/c/lethal-company/p/FlipMods/TooManyEmotesScrap/).
+
+        -
+        More information can be found on the mod page!
+
+
+        #### NOTE
+
+        While
+        you *can* use the base TooManyEmotes mod with other players who do not have
+        that mod, you ***cannot*** use the TooManyEmotesScrap mod with players who
+        do not also have the mod enabled.
+
+        <br><br>
+
+
+        ## Jug Band
+
+
+        -
+        The Jug Band emote has been added to the game! (Added in 2.0.0)
+
+        -
+        Jug Band is a 4-in-1 emote, that when played, plays 1 of 4 instruments in
+        the Jug Band song from Fortnite.
+
+        - These instruments are the Jug
+        (duh), Banjo, Guitar, and Fiddle.
+
+        - You can press [E] on another
+        player performing this emote, and you will sync with their emote, but with
+        a different instrument!
+
+        - Get three of your friends to perform the
+        Jug Band with you! (I dare you)
+
+        - For now, this is a complementary
+        emote. This may change in the future.
+
+        - [Emote preview](https://youtu.be/tWsCQk6ODEk)
+
+        <br><br>
+
+
+        ##
+        Emote Store
+
+
+        - You can view the emote store in the terminal, either
+        at the bottom of the "store" section, or by typing "emotes".
+
+        - Three
+        emotes will be available at a time in the store, and rotate per-quota.
+
+        -
+        The number of emotes in the rotation can be changed in the config.
+
+        -
+        Each game, you will start off with 100 free emote credits.
+
+        - Type
+        "Emotes" in the terminal to view all and future emote commands.
+
+        -
+        Everyone will start off with a set of complementary emotes each game!
+
+        <br><br>
+
+
+        ##
+        Rarity System
+
+
+        - Emotes will be categorized into 4 tiers based on
+        "rarity".
+
+        - This will affect the likelyhood of an emote for a given
+        tier to appear in the emote store rotation.
+
+        - This will also affect
+        their price.
+
+        - All emotes are color coded in the terminal!
+
+        -
+        Colors are configurable in the accessibility section in the config.
+
+        <br><br>
+
+
+        ##
+        Third Person Emotes
+
+
+        - To help prevent weird camera movements for
+        certain emotes, and to help lower motion sickness, you will perform custom
+        emotes in third-person.
+
+        - While emoting, you can freely move your
+        camera without turning your character, or interrupting your emote.
+
+        -
+        Upon moving, or canceling the emote, you will revert back to your normal
+        view.
+
+        - While emoting, you can now rotate your character while holding
+        the Alt key. This key can be changed in the config.
+
+        - You can now
+        scroll to zoom in and out while emoting. The min and max distance is clamped
+        at 1.5 and 5.
+
+        <br><br>
+
+
+        ## Everyone is Synced
+
+
+        -
+        When you buy an emote, everyone on the server unlocks the emote.
+
+        -
+        When players join the server, already unlocked emotes will be synced with
+        them.
+
+        - All unlocked emotes will be reset upon starting a new game,
+        disconnecting, or will be synced with future servers you join.
+
+        -
+        When performing a custom emote, all players will see the same emote.
+
+        <br><br>
+
+
+        ##
+        Everyone is not Synced! (optional)
+
+
+        - Sharing everything can be
+        disabled in the config.
+
+        - If disabled, each player will have their
+        own rotation of emotes in the store.
+
+        - Purchasing emotes will only
+        unlock for you.
+
+        - Each player will have their own reserve of emotes
+        credits. The amount of emote credits you earn will NOT be reduced.
+
+        -
+        You will still be able to see other players'' emotes, and even sync with
+        them! (if you enabled syncing emotes that are not unlocked in the config)
+
+        -
+        <strong>This feature may currently have bugs, as it changes the organization
+        of unlocked emotes and emote credits, and how the game saves/loads unlocked
+        emotes during the session.</strong><br> If you do run into any bugs, please
+        post the issue(s) on this mod''s Github!
+
+        <br><br>
+
+
+        ## Emote
+        Loadouts
+
+
+        - Emote loadouts are included on the left side of the
+        radial menu.
+
+        - Currently, there are two loadouts. "Favorites" and
+        "All".
+
+        - Favoriting emotes will persist throughout multiple sessions,
+        or upon closing/relaunching the game.<br>
+
+        Favorited emotes will
+        only be available if they have been unlocked in your session.
+
+        <br><br>
+
+
+        ##
+        Sync Emotes with Other Players
+
+
+        - When other players perform an
+        emote that loops, there will be a prompt when looking at them to perform
+        and sync with their emote.
+
+        - Syncing with another player''s emote
+        will perform the same emote, and match their time in the animation.
+
+        -
+        After syncing with a player, you can then rotate your character to look elsewhere
+        by holding the Alt key.<br>
+
+        (You can rotate your character regardless
+        of if you synced with a player''s emote or not)
+
+        <br><br>
+
+
+        ##
+        Masked Enemies Emoting
+
+
+        ### &nbsp;&nbsp;&nbsp;<strong>Trust no one!</strong><br>
+
+        ![Masked
+        Enemy Emotes](https://i.imgur.com/FqmLJ64.gif)
+
+        <br>
+
+        - The
+        [MaskedEnemyOverhaul](https://thunderstore.io/c/lethal-company/p/HomelessGinger/MaskedEnemyOverhaul/)
+        by HomelessGinger plays very nicely with this. You should check it out!
+
+        -
+        Masked Enemies will now be able to perform any emote that the player they''re
+        looking at has unlocked.
+
+        - When Masked Enemies stop and stare at
+        the player, they will have a chance to emote after a short delay for a few
+        seconds.
+
+        - Masked Enemies will ALWAYS emote during each player''s
+        first encounter with a Masked Enemy. This will happen for each new level.
+
+        -
+        The stop and stare duration has been increased by a bit to ensure that the
+        emotes play at a reasonable duration, and do not end very quickly.<br>
+
+        If
+        you do not want to increase the vanilla stop and stare time, or if this conflicts
+        with other mods, you can disable overriding this duration in the config.
+
+        -
+        You can sync emotes with Masked Enemies!
+
+        - All settings can be edited
+        in the config.
+
+        - <strong>This feature is currently in beta, as I
+        have no had the chance to extensively test this.</strong><br>
+
+        If
+        you run into any bugs, please post this issue in the Lethal Company Modding
+        Discord, or on the Github. Thank you!
+
+        <br><br>
+
+
+        ## Saved
+        Progression
+
+
+        - All emotes are unlocked for each saved game.
+
+        -
+        When you close your game, or stop the server, all unlocked emotes during
+        that session will be saved.
+
+        - This means, you will reload your previously
+        unlocked emotes upon loading an existing save, provided that they were already
+        unlocked.
+
+        - Unlocked emotes will still reset upon restarting, or
+        starting a new game.
+
+        <br><br>
+
+
+        ## Integrates well with
+        Unmodded Clients
+
+
+        - Playing custom emotes will just look like the
+        regular Dance1 for other clients without the mod.
+
+        - This mod is
+        designed to let you unlock emotes (or have them all unlocked by default)
+        if the host does not have the mod.<br>
+
+        This will allow all clients
+        to use emotes regardless of the mods the host is running.
+
+        <br><br>
+
+
+        ##
+        Mod Compatibility
+
+
+        - Supports InputUtils (not required, but recommended)
+
+        -
+        Compatible with More_Emotes!
+
+        - Compatible with MirrorDecor!
+
+        -
+        Compatible with MoreCompany Cosmetics!
+
+        - Third person camera mods
+        may or may not play nice. Who knows?
+
+        <br><br>
+
+
+        ## Special
+        Thanks for Beta Testing!
+
+
+        - YandereKat
+
+        - InfamousThunder
+
+        -
+        m0nst3r
+
+        - UFTaco
+
+        <br><br>
+
+
+        ### If you read this
+        far and are enjoying my mods
+
+
+        Please consider supporting me [here](https://ko-fi.com/flipf17)!<br>
+
+        Definitely
+        not required, but it would be greatly appreciated! =)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 438.78876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -39.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ddb7535300f70aa9b9a860e81f757fa, type: 3}
+--- !u!1001 &571937929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1799703890}
+    m_Modifications:
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909437, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: requiredTopLayer
+      value: 
+      objectReference: {fileID: 1799703891}
+    - target: {fileID: 8826886450134909438, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Name
+      value: MarkdownArea (RoR2.LookingGlass)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: markdownText
+      value: '# LookingGlass
+
+        A fully open source UI mod, compatible with
+        RiskUI
+
+
+
+        # Features:
+
+
+        ## Item Stats
+
+
+        - Full item
+        descriptions for all items. Items setup with the API have their calculations
+        noted in the description as well.
+
+
+        ![Item Stats](https://i.imgur.com/WXTVSxm.png)
+
+
+        ##
+        Auto Sort Items
+
+
+        - Sort your inventory with various parameters.
+        Defaults to sorting by tier and count.
+
+
+        ![Auto Sort Items](https://i.imgur.com/OfKQAdG.png)
+
+
+        ##
+        Stats Display
+
+
+        - Shows you general character stats on the right
+        side. Can customize however you want in settings, see [the syntax guide](https://github.com/Wet-Boys/LookingGlass/blob/main/Stats%20Display%20Syntax)
+        for adding in items
+
+
+        ![Vanilla Stats Display](https://i.imgur.com/z6P9rYb.png)
+
+        ![RiskUI
+        Stats Display](https://i.imgur.com/iYrnF6I.png)
+
+
+        ## Number Go Up
+
+
+        -
+        DPS meter and combo counter (Part of stats display)
+
+
+        ![Number go
+        Up](https://i.imgur.com/kHdyCqe.png)
+
+
+        ## Command Window Tweaks
+
+
+        -
+        Various tweaks to the command window, such as resizing, removing the blur,
+        and adding item counters to your existing items.
+
+
+        ![Command Window
+        Tweaks](https://i.imgur.com/5buYHlv.png)
+
+
+        ## Item Counters
+
+
+        -
+        Count your items in the scoreboard so you can see who is poor.
+
+
+        ![Item
+        Counters](https://i.imgur.com/40vXB3Y.png)
+
+
+        ## Risk of Options Support/RiskUI
+        support
+
+
+        - Change any options in game with Risk of Options
+
+
+        -
+        Fully compatible with RiskUI
+
+
+        # Planned features
+
+
+        - Ability
+        proc calculations
+
+
+        - Fully local buff timers (This one might not
+        happen, seems like timers are never actually networked since the base game
+        doesn''t need it, fair enough)
+
+
+        - More customization for the Stats
+        Display menu
+
+
+        # Have an issue/suggestion or want to contribute?
+
+
+        -
+        Please submit issues or suggestions to the GitHub repo https://github.com/Wet-Boys/LookingGlass/issues
+
+
+        -
+        If you want to contribute to the mod, feel free to reach out to us and/or
+        create a pull request. Please note that the CLA indicates all contributions
+        to this project are licensed under LGPLv3.
+
+
+        # Credits:
+
+
+        -
+        https://github.com/ontrigger/ItemStatsMod
+
+        - https://github.com/MCMrARM/ror2-mods
+
+        -
+        https://github.com/Moffein/ItemStats
+
+        - https://github.com/Vl4dimyr/CommandItemCount
+        for being great open source projects to use as reference material/code
+
+
+        (discord
+        tags)
+
+        - @github.com: icon
+
+        - @rune: coding
+
+        - @nunchuk:
+        coding'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 438.78876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -39.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ddb7535300f70aa9b9a860e81f757fa, type: 3}
 --- !u!1 &771636844
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +1365,7 @@ PrefabInstance:
     - target: {fileID: 8826886450134909438, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -421,11 +1475,16 @@ PrefabInstance:
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_Name
-      value: MarkdownArea (2)
+      value: MarkdownArea (LC.InputUtils)
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
@@ -590,6 +1649,526 @@ PrefabInstance:
         from: @AinaVT\n- PS5, Xbox Series X, Switch Glyph Source files from: https://thoseawesomeguys.com/prompts/\n-
         Mouse Glyph Source files from: https://www.kenney.nl/assets/input-prompts\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.size
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[15]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[17]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[18]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[19]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[20]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[21]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[22]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[23]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[24]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[25]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[26]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[27]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[28]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[29]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[30]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[31]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[32]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[33]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[34]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[35]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[36]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[37]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[38]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[39]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[40]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[41]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[42]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[43]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[44]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[45]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[46]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[47]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[48]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[49]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[50]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[51]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[52]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[53]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[54]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[55]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[56]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[57]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[58]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[59]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[60]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[61]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[62]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[63]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[64]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[65]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[66]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[67]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[68]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[69]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[70]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[71]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[72]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[73]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[74]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[75]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[76]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[77]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[78]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[79]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[80]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[81]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[82]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[83]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[84]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[85]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[86]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[87]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[88]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[89]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[90]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[91]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[92]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[93]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[94]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[95]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[96]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[97]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[98]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[99]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[100]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[101]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: _contentObjects.Array.data[102]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -628,27 +2207,27 @@ PrefabInstance:
     - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -1360,12 +2939,363 @@ PrefabInstance:
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_Name
-      value: MarkdownArea (1)
+      value: MarkdownArea (RoR2.RiskOfOptions)
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 438.78876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -39.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450920655383, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ddb7535300f70aa9b9a860e81f757fa, type: 3}
+--- !u!1001 &1737056004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1799703890}
+    m_Modifications:
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909427, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450134909437, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: requiredTopLayer
+      value: 
+      objectReference: {fileID: 1799703891}
+    - target: {fileID: 8826886450134909438, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026432, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_Name
+      value: MarkdownArea (LC.MoreEmotes)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: markdownText
+      value: "# More Emotes V1.3.3 - Sligili\n\n## MANUAL INSTALLATION \U0001F6E0\nExtract
+        into the main game folder (where ```Lethal Company.exe``` is located). Ensure
+        you have [BepInEx](https://github.com/BepInEx/BepInEx) and [RuntimeNetcodePatcher](https://thunderstore.io/c/lethal-company/p/Ozone/Runtime_Netcode_Patcher/)
+        installed.\n\n\n## DESCRIPTION \U0001F4DD\n### - Compatible with all versions
+        up to **v49** -\n\nSeamlessly integrates with the vanilla game. Certain emotes
+        produce sounds (no songs), such as footsteps, that enemies can hear as well,
+        so be careful where you clap. All emotes play on first person. Supports controller
+        and should work with any LethalEmotesAPI mod and TooManyEmotes.\n\n> The
+        host needs to have the mod installed for the sign emote to work\n\n## CONFIGURATION
+        \u2699\nUse either the in-game **More Emotes** menu found under **Settings**
+        or the configuration file (open ```BepInEx/config/MoreEmotes.cfg``` with
+        a text editor if manually installed, otherwise use the **r2modman // thunderstore**
+        config editor). Ensure to set ```Use Config File``` to true if opting for
+        the latter.\n\n## EMOTE WHEEL \U0001F3A1 \n \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E  \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        **\u200E\u200E\u200EDefault Key : ```V```** or **```LB / L1```** \n\n \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164 \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E![EmoteWheel](https://i.imgur.com/FRQbygZ.jpg)\n\n##
+        EMOTES \U0001F468\u200D\U0001F9AF\n| \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200EMiddle
+        Finger |  \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E Clap |  \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E Shy|\n| --- | --- | ---
+        |\n| ![Middle Finger](https://i.imgur.com/Z1U4Ff0.jpg) | ![Clap](https://i.imgur.com/SBhR7yr.jpg)
+        | ![Shy](https://i.imgur.com/x9RIYrA.jpg) |\n| \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```3``` | \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```4``` | \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```5``` |\n\n| \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E 
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200EThe
+        Griddy|\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200ETwerk
+        |\u3164\u3164\u3164\u3164\u3164\u3164\u3164\u3164Salute|\n| :---: | :---:
+        | :---: |\n| ![TheGriddy](https://i.imgur.com/owa90oo.jpg) | ![Twerk](https://i.imgur.com/e1qanLt.jpg)
+        | ![Salute](https://i.imgur.com/4zWVfSi.jpg) |\n| \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```6``` | \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```7``` | \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```8``` |\n\n|\u3164\u3164\u3164\u3164\u3164\u3164\u3164Prisyadka|\u3164\u3164\u3164\u3164\u3164\u3164\u3164\u3164Sign|
+        \n| :---: | :---: |\n| ![Prisyadka](https://i.imgur.com/oGp7GAx.jpg) | ![Sign](https://i.imgur.com/oF9Pvb5.jpg)
+        |\n| \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```9``` | \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164
+        \u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u3164\u200E\u200E\u200E\u200E\u200E\u200E\u200E\u200E
+        Default Key: ```0``` |\n\n\n## CHANGELOG \U0001F557\n\nJoin the [LC Modding](https://discord.gg/XeyYqRdRGC)
+        server to report bugs or incompatibilities on the More Emotes thread. \n\n-
+        ***v1.3.3:***\n     - You should now be unable to emote while performing
+        an emote from TooManyEmotes.\n     - RuntimeControllers are now OverrideControllers
+        (Previous versions are not going to work with newer versions of TooManyEmotes
+        anymore)\n     - Fixed current emote not updating for others on 'StopPerformingEmote'\n-
+        ***v1.3.2:***\n     - Corrected an issue where emote wheel keybinds couldn't
+        be left blank\n     - Corrected the default controller emote wheel key, which
+        was set to 'V' by accident\n     - Converted alternative emotes into positive
+        values to prevent conflicts with other mods\n- ***v1.3.1:***\n     - Disabled
+        debug logs \U0001F636\n- ***v1.3.0:***\n     - Compatibility with v47, v48
+        and v49\n     - Added the Prisyadka and Sign emotes\n     - Perform middle
+        finger twice to use both hands\n     - Perform the clap emote twice to clap
+        faster\n     - Added controller support\n     - Enhanced griddy and shy first-person
+        animations\n     - Revamped emote wheel and the settings menu appearance\n    
+        - Fixed a bug where the previous animation will play for a few frames before
+        actually performing the correct one\n     - Fixed animations not playing
+        from the beginning after performing them once\n     - Fixed IK issues after
+        playing specific animations\n     - Handled a null exception on game launch\n    
+        - Fixed players not doing the spawn animation\n     - Fixed Level and Beta
+        badges rendering on the first-person camera\n     - Now the emote wheel input
+        will be ignored while typing in the chat and when pressing ctrl\n     - Fixed
+        the Inventory Check toggle not displaying the actual value\n     - The config
+        file works again, but you need to toggle \"Use Config File\" in it\n    
+        - Tweaked the icon\n     \n- ***v1.2.2:***\n     - Added an in-game settings
+        menu\n     - Fixed blank key binds spamming the log with errors\n     - Removed
+        config file from the zip. Open the game once to generate it.\n- ***v1.2.1:***\n    
+        - Updated Readme, forgot some info \U0001F449\U0001F448\n- ***v1.2.0:***\n    
+        - Emote Wheel \U0001F911\n     - Added the twerk (sorry) and salute animation\n    
+        - Added a bool in the config file to disable the inventory check\n     -
+        The clap sound timing has been slightly tweaked to sound more natural (?\n    
+        - Re-formatted the entire config file\n- ***v1.1.3:***\n     - Works with
+        Late Game Upgrades (temporal cheap fix)\n     - The griddy doesn't require
+        the player to equip an empty slot anymore\n     - Fixed footstep sounds being
+        duplicated \n- ***v1.1.2:***\n     - Fully compatible with v45 but should
+        work with v40 as well\n     - Moving while performing the griddy is now possible
+        (halves ur speed)\n- ***v1.1.1:***\n     - Disabled some emotes while holding
+        items/scrap\n     - Added sound to the clapping animation, enemies can hear
+        it aswell \U0001F608\n     - Minor tweaks to the first person clap animation\n-
+        ***v1.1.0:***\n     - Added the shy (lethal uwu), clap and griddy emote \U0001F976\n    
+        - Minor tweaks to the middlefinger emote\n     - Animations won't stutter
+        anymore \n     - You can disable keybinds now\n- ***v1.0.0:*** \n     - Initial
+        release \U0001F60E\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -1945,6 +3875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450293861044, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450752039757, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}

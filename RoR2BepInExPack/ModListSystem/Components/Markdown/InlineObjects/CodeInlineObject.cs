@@ -1,5 +1,6 @@
 using Markdig.Syntax.Inlines;
 using RoR2.UI;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;

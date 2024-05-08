@@ -1,4 +1,5 @@
 using Markdig.Syntax.Inlines;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
@@ -18,10 +19,12 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
             Debug.Log($"Unhandled Emphasis: {emphasisInline.DelimiterChar}");
         }
 
-        inlineCtx.LastItem = false;
+        var currentYPos = inlineCtx.YPos;
         
         foreach (var subInline in emphasisInline)
         {
+            inlineCtx.LastItem = emphasisInline.NextSibling is null && subInline.NextSibling is null;
+            
             if (bold)
                 inlineCtx.AddStyleTags("b");
             else if (italicize)
@@ -34,5 +37,9 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
             else if (italicize)
                 inlineCtx.RemoveStyleTags("i");
         }
+
+        inlineCtx.LastItem = false;
+
+        Height = inlineCtx.YPos - currentYPos;
     }
 }

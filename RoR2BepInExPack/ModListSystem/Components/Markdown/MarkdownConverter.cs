@@ -13,6 +13,7 @@ public class MarkdownConverter : UIBehaviour
     [Multiline]
     public string markdownText;
 
+    [SerializeField, HideInInspector]
     private GameObject[] _contentObjects = [];
 
     public override void Awake()
@@ -28,6 +29,13 @@ public class MarkdownConverter : UIBehaviour
         ClearContent();
         
         _contentObjects = markdownBlockParser.Parse(markdownText, content);
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+        
+        ClearContent();
     }
 
     public void ClearContent()

@@ -1,4 +1,5 @@
 using Markdig.Syntax;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;

@@ -1,4 +1,5 @@
 using Markdig.Syntax.Inlines;
+using RoR2BepInExPack.ModListSystem.Markdown;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
 
@@ -14,7 +15,7 @@ public class LineBreakInlineObject : LiteralInlineObject
         
         label.fontSize = inlineCtx.FontSize;
 
-        if (lineBreakInline.PreviousSibling is not LineBreakInline)
+        if (lineBreakInline.PreviousSibling is not LineBreakInline && !inlineCtx.LastItem)
         {
             SetText(" ", renderCtx, inlineCtx);
             return;

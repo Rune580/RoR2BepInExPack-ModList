@@ -1,6 +1,7 @@
 using Markdig.Helpers;
 using Markdig.Syntax;
 using RoR2.UI;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 using UnityEngine.UI;
 

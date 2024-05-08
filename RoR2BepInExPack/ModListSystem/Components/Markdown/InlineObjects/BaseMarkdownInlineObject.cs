@@ -1,4 +1,5 @@
 using Markdig.Syntax.Inlines;
+using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

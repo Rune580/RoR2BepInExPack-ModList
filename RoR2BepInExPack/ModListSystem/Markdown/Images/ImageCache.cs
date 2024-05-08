@@ -9,16 +9,14 @@ namespace RoR2BepInExPack.ModListSystem.Markdown.Images;
 
 internal class ImageCache
 {
-    private static readonly string[] ValidExtensions = [ ".png", ".tiff", ".bmp", ".jpeg", ".jpg" ];
+    private static readonly string[] ValidExtensions = [ ".svg", ".png", ".jpeg", ".gif" ];
 
     [JsonProperty]
     private Dictionary<string, CacheEntry> UrlCacheEntryLut { get; set; } = new();
 
-    public bool TryGetImagePath(string url, out string imagePath)
+    public bool TryGetImageEntry(string url, out CacheEntry entry)
     {
-        imagePath = null;
-        
-        if (!UrlCacheEntryLut.TryGetValue(url, out var entry))
+        if (!UrlCacheEntryLut.TryGetValue(url, out entry))
             return false;
 
         if (entry.Expired || string.IsNullOrEmpty(entry.FileName))
@@ -33,9 +31,8 @@ internal class ImageCache
             RemoveEntry(url, entry);
             return false;
         }
-
-        imagePath = Path.GetFullPath(Path.Combine(GetCacheDir(), entry.FileName));
-        if (!File.Exists(imagePath))
+        
+        if (!File.Exists(entry.FullPath))
         {
             RemoveEntry(url, entry);
             return false;
@@ -82,11 +79,13 @@ internal class ImageCache
         }
     }
 
-    public FileStream AddAndOpenWrite(string url, string fileName)
+    public FileStream AddAndOpenWrite(string url, string fileName, ImageType imageType)
     {
         var entry = new CacheEntry
         {
-            FileName = fileName, ExpiresAfter = DateTimeOffset.Now.AddDays(1).ToUnixTimeMilliseconds()
+            FileName = fileName,
+            ImageType = imageType,
+            ExpiresAfter = DateTimeOffset.Now.AddDays(1).ToUnixTimeMilliseconds()
         };
 
         if (UrlCacheEntryLut.TryGetValue(url, out var oldEntry))
@@ -101,13 +100,20 @@ internal class ImageCache
     public static string GetCacheDir() => Path.Combine(Application.persistentDataPath, "RoR2BepInExPack", "Cache");
     public static string GetCacheFilePath() => Path.Combine(GetCacheDir(), "image-cache.json");
     
-    private struct CacheEntry
+    [JsonObject(MemberSerialization.OptIn)]
+    public struct CacheEntry
     {
         [JsonProperty]
         public string FileName { get; set; }
+        
+        [JsonProperty]
+        public ImageType ImageType { get; set; }
+        
         [JsonProperty]
         public long ExpiresAfter { get; set; }
-
+        
         public bool Expired => DateTimeOffset.Now.ToUnixTimeMilliseconds() > ExpiresAfter;
+        
+        public string FullPath => Path.GetFullPath(Path.Combine(GetCacheDir(), FileName));
     }
 }

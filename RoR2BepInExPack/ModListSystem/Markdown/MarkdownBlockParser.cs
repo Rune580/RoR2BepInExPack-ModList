@@ -5,6 +5,7 @@ using Markdig.Syntax;
 using RoR2BepInExPack.ModListSystem.Components.Markdown;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using UnityEngine;
+using UnityEngine.UI;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -32,11 +33,13 @@ public class MarkdownBlockParser : ScriptableObject
         
         var doc = Markdig.Markdown.Parse(markdown, pipeline);
         
+        LayoutRebuilder.ForceRebuildLayoutImmediate(target);
+        
         var renderCtx = new RenderContext
         {
             BlockParser = this,
             InlineParser = inlineParser,
-            ViewportRect = target.rect,
+            ViewportRect = new Rect(target.rect.position, target.rect.size - new Vector2(20f, 20f)),
             FontSize = fontSize,
             YPos = 0f
         };

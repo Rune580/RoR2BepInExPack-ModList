@@ -1,9 +1,7 @@
 using System;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Threading;
 using Newtonsoft.Json;
-using Svg;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -79,17 +77,12 @@ internal static class ImageHelper
         return true;
     }
     
-    public static Texture2D GetImage(string url)
+    public static BaseImage GetImage(string url)
     {
         var cache = GetImageCache();
-
-        var tex2d = new Texture2D(1, 1);
-
-        if (cache.TryGetImagePath(url, out var imagePath))
-        {
-            tex2d.LoadImage(File.ReadAllBytes(imagePath));
-            return tex2d;
-        }
+        
+        if (cache.TryGetImageEntry(url, out var imageEntry))
+            return CreateImage(imageEntry.FullPath, imageEntry.ImageType);
         
         var request = UnityWebRequest.Get(url);
         
@@ -97,27 +90,47 @@ internal static class ImageHelper
         while (!request.isDone)
             Thread.Sleep(100);
 
-        var imageType = DetermineImageType(request.downloadHandler);
+        var imageType = DetermineImageTypeFromHeader(request.downloadHandler);
 
+        var fileName = Guid.NewGuid().ToString();
+        
         switch (imageType)
         {
             case ImageType.Unknown:
+                Debug.LogWarning($"Unknown Image Type!\n Url: {url}");
                 break;
             case ImageType.Svg:
-                var fileName = $"{Guid.NewGuid().ToString()}.png";
-                var text = request.downloadHandler.text;
-
-                var svg = SvgDocument.FromSvg<SvgDocument>(text);
-                var bitmap = svg.Draw();
-
-                using (var fs = cache.AddAndOpenWrite(url, fileName))
-                    bitmap.Save(fs, ImageFormat.Png);
+                using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.svg", imageType))
+                {
+                    var bytes = request.downloadHandler.data;
+                    fs.Write(bytes, 0, bytes.Length);
+                }
+                // using (var svg = SKSvg.CreateFromSvg(text))
+                // {
+                //     using var fs = cache.AddAndOpenWrite(url, $"{fileName}.png", imageType);
+                //     svg.Save(fs, SKColor.Empty);
+                // }
                 break;
             case ImageType.Png:
+                using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.png", imageType))
+                {
+                    var bytes = request.downloadHandler.data;
+                    fs.Write(bytes, 0, bytes.Length);
+                }
                 break;
             case ImageType.Jpeg:
+                using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.jpeg", imageType))
+                {
+                    var bytes = request.downloadHandler.data;
+                    fs.Write(bytes, 0, bytes.Length);
+                }
                 break;
             case ImageType.Gif:
+                using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.gif", imageType))
+                {
+                    var bytes = request.downloadHandler.data;
+                    fs.Write(bytes, 0, bytes.Length);
+                }
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -125,32 +138,59 @@ internal static class ImageHelper
         
         SaveCache();
         
-        if (cache.TryGetImagePath(url, out imagePath))
-        {
-            tex2d.LoadImage(File.ReadAllBytes(imagePath));
-            return tex2d;
-        }
+        if (cache.TryGetImageEntry(url, out imageEntry))
+            return CreateImage(imageEntry.FullPath, imageEntry.ImageType);
         
-        // Todo
-
         return null;
     }
 
-    private static ImageType DetermineImageType(DownloadHandler handler)
+    private static BaseImage CreateImage(string imagePath, ImageType imageType)
     {
+        if (imageType == ImageType.Unknown)
+        {
+            Debug.LogWarning($"Unknown Image Type!");
+            throw new InvalidOperationException();
+        }
+        
+        if (imageType == ImageType.Svg)
+            return new VectorImage(imagePath);
+
+        if (imageType == ImageType.Gif) // Todo animated pngs and webps
+            return new AnimatedImage(imagePath);
+
+        return new StaticImage(imagePath);
+    }
+
+    private static ImageType DetermineImageTypeFromHeader(DownloadHandler handler)
+    {
+        // Try and detect SVG first.
         if (handler.text.TrimStart().StartsWith("<svg"))
             return ImageType.Svg;
 
-        // Todo detect other types of images
+        var bytes = handler.data;
+
+        if (bytes.Length < ImageHeaderInspector.MaxHeaderLength) // Verify that the data is longer than the longest header we support (jpeg)
+            return ImageType.Unknown;
+
+        var imageInspector = new ImageHeaderInspector(bytes);
+
+        // PNG files always have these 8 bytes at the start
+        // http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html
+        if (imageInspector.MatchForward(0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A))
+            return ImageType.Png;
+
+        if (imageInspector.MatchAndMoveForward(0xFF, 0xD8, 0xFF))
+        {
+            var appByte = imageInspector.GetCurrent();
+
+            if (appByte is >= 0xE0 and <= 0xEF)
+                return ImageType.Jpeg;
+        }
+        
+        imageInspector.Reset();
+        if (imageInspector.MatchForward("GIF"u8))
+            return ImageType.Gif;
+        
         return ImageType.Unknown;
-    }
-    
-    private enum ImageType
-    {
-        Unknown,
-        Svg,
-        Png,
-        Jpeg,
-        Gif
     }
 }
