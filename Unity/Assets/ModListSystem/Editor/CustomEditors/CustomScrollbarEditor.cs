@@ -1,6 +1,6 @@
 ﻿using RoR2.UI;
 
-namespace ModListSystem.Editor
+namespace ModListSystem.Editor.CustomEditors
 {
     [UnityEditor.CustomEditor(typeof(CustomScrollbar))]
     public class CustomScrollbarEditor : UnityEditor.Editor

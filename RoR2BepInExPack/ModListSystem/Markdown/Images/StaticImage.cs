@@ -7,7 +7,7 @@ internal class StaticImage : BaseImage
 {
     public override Texture2D Texture { get; }
 
-    public StaticImage(string imagePath) : base(imagePath)
+    public StaticImage(string imagePath)
     {
         var imageBytes = File.ReadAllBytes(imagePath);
         

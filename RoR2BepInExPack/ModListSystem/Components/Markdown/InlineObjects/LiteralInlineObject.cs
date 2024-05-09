@@ -5,13 +5,14 @@ using Markdig.Syntax.Inlines;
 using RoR2.UI;
 using RoR2BepInExPack.ModListSystem.Markdown;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
 
 public class LiteralInlineObject : BaseMarkdownInlineObject
 {
-    private static readonly Regex UnicodeRegex = new(@"\\u([a-zA-Z0-9]*)");
+    private static readonly Regex UnicodeRegex = new(@"((\\u([a-zA-Z0-9]+))+)");
     
     public HGTextMeshProUGUI label;
     
@@ -32,6 +33,12 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
 
     protected void SetText(string text, RenderContext renderCtx, InlineContext inlineCtx)
     {
+        var match = UnicodeRegex.Matches(text);
+        if (match.Count > 0)
+        {
+            Debug.Log("sex");
+        }
+        
         text = UnicodeRegex.Replace(text, @"\U\\U000$1\E");
         
         AnchoredYPos = -inlineCtx.YPos;

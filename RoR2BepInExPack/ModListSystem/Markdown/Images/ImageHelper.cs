@@ -153,7 +153,7 @@ internal static class ImageHelper
         }
         
         if (imageType == ImageType.Svg)
-            return new VectorImage(imagePath);
+            return VectorImage.FromFile(imagePath);
 
         if (imageType == ImageType.Gif) // Todo animated pngs and webps
             return new AnimatedImage(imagePath);

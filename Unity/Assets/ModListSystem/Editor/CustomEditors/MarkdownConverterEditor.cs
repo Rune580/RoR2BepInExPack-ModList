@@ -2,7 +2,7 @@ using RoR2BepInExPack.ModListSystem.Components.Markdown;
 using UnityEditor;
 using UnityEngine;
 
-namespace ModListSystem.Editor
+namespace ModListSystem.Editor.CustomEditors
 {
     [CustomEditor(typeof(MarkdownConverter))]
     public class MarkdownConverterEditor : UnityEditor.Editor

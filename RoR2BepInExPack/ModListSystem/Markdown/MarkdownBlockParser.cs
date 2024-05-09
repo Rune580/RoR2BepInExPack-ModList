@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Markdig;
 using Markdig.Syntax;
-using RoR2BepInExPack.ModListSystem.Components.Markdown;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using UnityEngine;
 using UnityEngine.UI;

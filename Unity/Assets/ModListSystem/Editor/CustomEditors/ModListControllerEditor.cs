@@ -4,7 +4,7 @@ using RoR2BepInExPack.ModListSystem.Components.ModList;
 using UnityEditor;
 using UnityEngine;
 
-namespace ModListSystem.Editor
+namespace ModListSystem.Editor.CustomEditors
 {
     [CustomEditor(typeof(ModListController))]
     public class ModListControllerEditor : UnityEditor.Editor

@@ -10,7 +10,11 @@
     "precompiledReferences": [
         "RoR2.dll",
         "RoR2BepInExPack.dll",
-        "BepInEx.dll"
+        "BepInEx.dll",
+        "Svg.Skia.dll",
+        "Svg.Model.dll",
+        "Svg.Custom.dll",
+        "SkiaSharp.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

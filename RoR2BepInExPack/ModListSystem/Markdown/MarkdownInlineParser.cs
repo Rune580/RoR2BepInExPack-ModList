@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Markdig.Syntax.Inlines;
-using RoR2BepInExPack.ModListSystem.Components.Markdown;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
 using UnityEngine;
 

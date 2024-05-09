@@ -1,6 +1,6 @@
 ﻿using RoR2BepInExPack.ModListSystem.Components.ModList;
 
-namespace ModListSystem.Editor
+namespace ModListSystem.Editor.CustomEditors
 {
     [UnityEditor.CustomEditor(typeof(ModCard))]
     public class ModCardEditor : UnityEditor.Editor

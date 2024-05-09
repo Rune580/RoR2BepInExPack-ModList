@@ -1,7 +1,10 @@
 using System;
+using System.Runtime.CompilerServices;
 using SkiaSharp;
 using Svg.Skia;
 using UnityEngine;
+
+[assembly: InternalsVisibleTo("ModListSystem.Editor")]
 
 namespace RoR2BepInExPack.ModListSystem.Markdown.Images;
 
@@ -37,9 +40,9 @@ internal class VectorImage : BaseImage
         }
     }
 
-    public VectorImage(string imagePath) : base(imagePath)
+    private VectorImage(SKSvg svg)
     {
-        _svg = SKSvg.CreateFromFile(imagePath);
+        _svg = svg;
         _skPicture = _svg.Picture ?? throw new InvalidOperationException();
         _skColorSpace = SKColorSpace.CreateSrgb();
         _skColorType = SKImageInfo.PlatformColorType;
@@ -93,4 +96,8 @@ internal class VectorImage : BaseImage
         _skColorSpace.Dispose();
         _svg.Dispose();
     }
+
+    public static VectorImage FromFile(string filePath) => new(SKSvg.CreateFromFile(filePath));
+
+    public static VectorImage FromSvg(string svg) => new(SKSvg.CreateFromSvg(svg));
 }

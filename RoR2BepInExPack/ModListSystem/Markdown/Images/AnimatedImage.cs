@@ -23,7 +23,7 @@ internal class AnimatedImage : BaseImage
     
     public override Texture2D Texture { get; }
     
-    public AnimatedImage(string imagePath) : base(imagePath)
+    public AnimatedImage(string imagePath)
     {
         _stream = new MemoryStream(File.ReadAllBytes(imagePath));
         _skStream = new SKManagedStream(_stream);
