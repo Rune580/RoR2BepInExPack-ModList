@@ -22,12 +22,12 @@ public class VectorGraphic : ScriptableObject
     
     private void OnValidate()
     {
-        CreatePreviewTexture();
+        UpdateTexture();
     }
     
     private void OnEnable()
     {
-        CreatePreviewTexture();
+        UpdateTexture();
     }
 
     private void OnDisable()
@@ -41,7 +41,7 @@ public class VectorGraphic : ScriptableObject
         _image = null;
     }
     
-    private void CreatePreviewTexture()
+    private void UpdateTexture()
     {
         if (_image != null)
         {

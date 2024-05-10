@@ -49,7 +49,7 @@ public class MarkdownBlockParser : ScriptableObject
             if (!instance)
                 continue;
             
-            blockObjects.Add(instance);
+            blockObjects.Add(instance.gameObject);
         }
 
         var contentSize = target.sizeDelta;
@@ -59,7 +59,7 @@ public class MarkdownBlockParser : ScriptableObject
         return blockObjects.ToArray();
     }
     
-    public GameObject Parse(Block block, RectTransform target, RenderContext renderCtx)
+    public BaseMarkdownBlockObject Parse(Block block, RectTransform target, RenderContext renderCtx)
     {
         if (!Enum.TryParse<BlockType>(block.GetType().Name, out var blockType))
         {
@@ -73,13 +73,13 @@ public class MarkdownBlockParser : ScriptableObject
             
         var instance = Instantiate(prefab, target);
         
-        var blockParser = instance.GetComponent<BaseMarkdownBlockObject>();
-        if (!blockParser)
-            return instance;
+        var blockObject = instance.GetComponent<BaseMarkdownBlockObject>();
+        if (!blockObject)
+            return null;
             
-        blockParser.Parse(block, renderCtx);
+        blockObject.Parse(block, renderCtx);
 
-        return instance;
+        return blockObject;
     }
 
     private GameObject GetPrefab(BlockType blockType)

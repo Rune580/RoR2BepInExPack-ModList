@@ -1,5 +1,4 @@
 using Markdig.Syntax;
-using Markdig.Syntax.Inlines;
 using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 
@@ -30,9 +29,13 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
             renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
         }
         
-        renderCtx.YPos += inlineCtx.YPos;
+        renderCtx.YPos += inlineCtx.YPos + inlineCtx.LineHeight;
 
         Height = renderCtx.YPos - currentYPos;
+        
+        preferredWidth = inlineCtx.PreferredWidth;
+        minHeight = Height;
+        preferredHeight = Height;
 
         // Bottom padding
         renderCtx.YPos += 16f;

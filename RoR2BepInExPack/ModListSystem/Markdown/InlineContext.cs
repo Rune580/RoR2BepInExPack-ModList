@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -14,6 +15,7 @@ public class InlineContext
     public bool LastItem;
 
     public float LineHeight;
+    public float PreferredWidth;
 
     public string Styling
     {
@@ -73,4 +75,8 @@ public class InlineContext
     }
 
     public void ClearTags() => _tags.Clear();
+
+    public void SetLineHeightIfBigger(float lineHeight) => LineHeight = Mathf.Max(LineHeight, lineHeight);
+    
+    public void SetPreferredWidthIfBigger(float preferredWidth) => PreferredWidth = Mathf.Max(PreferredWidth, preferredWidth);
 }

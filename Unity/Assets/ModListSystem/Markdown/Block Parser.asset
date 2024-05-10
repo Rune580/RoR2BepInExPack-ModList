@@ -36,3 +36,12 @@ MonoBehaviour:
   - blockType: 1
     prefab: {fileID: 5135084280662523739, guid: 19ef7a5cc7af288babcac6f5660c9d4c,
       type: 3}
+  - blockType: 14
+    prefab: {fileID: 5135084280662523739, guid: f9c63a4e22a162b4ea86df9f53f27402,
+      type: 3}
+  - blockType: 16
+    prefab: {fileID: 5135084280662523739, guid: 5364b5f75bddd31ff81cf0a0a198ec25,
+      type: 3}
+  - blockType: 15
+    prefab: {fileID: 5135084280662523739, guid: 80761e00efadc9fbbaec0a42ad10cd3a,
+      type: 3}

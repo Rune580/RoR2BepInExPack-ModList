@@ -15,24 +15,32 @@ public class EmojiSet : ScriptableObject, ISerializationCallbackReceiver
     private SerializedDict[] _serializedCodePointEmojiLut;
     private Dictionary<string, VectorGraphic> _codePointEmojiLut;
 
-    internal void AddEmoji(string unicode, VectorGraphic emojiGraphic)
+    internal void AddEmoji(string codePoint, VectorGraphic emojiGraphic)
     {
-        _codePointEmojiLut[unicode] = emojiGraphic;
+        _codePointEmojiLut ??= new Dictionary<string, VectorGraphic>();
+        _codePointEmojiLut[codePoint] = emojiGraphic;
     }
 
-    // public VectorGraphic this[string codePoint]
-    // {
-    //     get
-    //     {
-    //         Char.
-    //     }
-    // }
-    
+    internal void Clear()
+    {
+        _codePointEmojiLut ??= new Dictionary<string, VectorGraphic>();
+        _codePointEmojiLut.Clear();
+        
+        _serializedCodePointEmojiLut = [];
+    }
+
+    public VectorGraphic this[string codePoint] => _codePointEmojiLut[codePoint];
+
+    public bool TryGetEmoji(string codePoint, out VectorGraphic emojiGraphic) =>
+        _codePointEmojiLut.TryGetValue(codePoint, out emojiGraphic);
+
     public void OnBeforeSerialize()
     {
         _codePointEmojiLut ??= new Dictionary<string, VectorGraphic>();
 
-        _serializedCodePointEmojiLut = _codePointEmojiLut.Select(kvp => new SerializedDict(kvp.Key, kvp.Value))
+        _serializedCodePointEmojiLut = _codePointEmojiLut
+            .Where(kvp => !string.IsNullOrEmpty(kvp.Key) && kvp.Value)
+            .Select(kvp => new SerializedDict(kvp.Key, kvp.Value))
             .ToArray();
     }
 
@@ -40,13 +48,15 @@ public class EmojiSet : ScriptableObject, ISerializationCallbackReceiver
     {
         _serializedCodePointEmojiLut ??= [];
         
-        _codePointEmojiLut = _serializedCodePointEmojiLut.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        _codePointEmojiLut = _serializedCodePointEmojiLut
+            .Where(kvp => !string.IsNullOrEmpty(kvp.key) && kvp.value)
+            .ToDictionary(kvp => kvp.key, kvp => kvp.value);
     }
 
     [Serializable]
-    private readonly struct SerializedDict(string key, VectorGraphic value)
+    private struct SerializedDict(string key, VectorGraphic value)
     {
-        public readonly string Key = key;
-        public readonly VectorGraphic Value = value;
+        public string key = key;
+        public VectorGraphic value = value;
     }
 }

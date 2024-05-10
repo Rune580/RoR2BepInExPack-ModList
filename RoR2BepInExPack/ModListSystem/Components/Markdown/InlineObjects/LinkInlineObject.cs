@@ -126,11 +126,13 @@ public class LinkInlineObject : BaseMarkdownInlineObject
             height = width / aspectRatio;
 
             imageRt.anchoredPosition = new Vector2(inlineCtx.XPos, -inlineCtx.YPos);
+            inlineCtx.SetPreferredWidthIfBigger(inlineCtx.XPos + width);
             inlineCtx.XPos += width + 8f;
         }
         else
         {
             imageRt.anchoredPosition = new Vector2(inlineCtx.XPos, -inlineCtx.YPos);
+            inlineCtx.SetPreferredWidthIfBigger(inlineCtx.XPos + width);
             inlineCtx.XPos += width + 8f;
         }
 

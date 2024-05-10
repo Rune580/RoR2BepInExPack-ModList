@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEditor.Experimental.AssetImporters;
@@ -15,6 +16,11 @@ namespace ModListSystem.Editor
             
             ctx.AddObjectToAsset("Vector Graphic", vectorGraphic);
             ctx.SetMainObject(vectorGraphic);
+        }
+
+        public override bool SupportsRemappedAssetType(Type type)
+        {
+            return base.SupportsRemappedAssetType(type);
         }
     }
 }
