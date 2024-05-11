@@ -85,6 +85,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 4942405144654917294}
-  vectorQualityScale: 1
   rt: {fileID: 297103467634970847}
   emojiSet: {fileID: 11400000, guid: 390aced7b0f31dba982212e5e230a4c8, type: 2}
