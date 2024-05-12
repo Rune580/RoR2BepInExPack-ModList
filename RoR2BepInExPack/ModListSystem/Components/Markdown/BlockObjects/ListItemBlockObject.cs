@@ -40,7 +40,7 @@ public class ListItemBlockObject : BaseMarkdownBlockObject
             bulletLabel.rectTransform.sizeDelta = bulletSize;
         }
         
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
         var subCtx = new RenderContext(renderCtx)
         {

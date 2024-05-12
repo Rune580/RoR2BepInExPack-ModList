@@ -15,7 +15,7 @@ public class FencedCodeBlockObject : CodeBlockObject
         if (block is not FencedCodeBlock fencedCodeBlock)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         var codeLines = fencedCodeBlock.Lines.Lines;
         int emptyLines = 0;

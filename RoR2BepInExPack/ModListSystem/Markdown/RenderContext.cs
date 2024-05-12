@@ -14,7 +14,12 @@ public class RenderContext
     public float XPos;
     public float YPos;
 
-    public RenderContext() { }
+    public TextStyling Styling;
+
+    public RenderContext()
+    {
+        Styling = new TextStyling();
+    }
 
     public RenderContext(RenderContext other)
     {
@@ -25,5 +30,7 @@ public class RenderContext
         FontSize = other.FontSize;
         XPos = other.XPos;
         YPos = other.YPos;
+
+        Styling = other.Styling;
     }
 }

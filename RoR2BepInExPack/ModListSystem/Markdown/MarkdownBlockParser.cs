@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Markdig;
 using Markdig.Syntax;
+using RoR2BepInExPack.ModListSystem.Components;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,9 +29,11 @@ public class MarkdownBlockParser : ScriptableObject
 
         var pipeline = new MarkdownPipelineBuilder()
             .UseAdvancedExtensions()
+            .DisableHtml()
+            .UseEmojiAndSmiley(false)
             .Build();
         
-        var doc = Markdig.Markdown.Parse(markdown, pipeline);
+        var doc = Markdig.Markdown.Parse(MarkdownPreProcessor.PreProcess(markdown), pipeline);
         
         LayoutRebuilder.ForceRebuildLayoutImmediate(target);
         

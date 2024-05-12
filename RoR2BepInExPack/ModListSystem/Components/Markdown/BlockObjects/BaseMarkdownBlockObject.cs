@@ -22,6 +22,12 @@ public abstract class BaseMarkdownBlockObject : UIBehaviour, ILayoutElement
         }
     }
 
+    protected Vector2 AnchoredPosition
+    {
+        get => RectTransform.anchoredPosition;
+        set => RectTransform.anchoredPosition = value;
+    }
+
     protected float Height
     {
         get => RectTransform.sizeDelta.y;

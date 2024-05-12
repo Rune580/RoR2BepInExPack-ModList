@@ -55,6 +55,8 @@ public class LinkInlineObject : BaseMarkdownInlineObject
             image.enabled = false;
         }
 
+        var styling = inlineCtx.Styling;
+
         foreach (var subInline in linkInline)
         {
             if (subInline is LiteralInline && linkInline.IsImage && handledImage)
@@ -62,9 +64,9 @@ public class LinkInlineObject : BaseMarkdownInlineObject
             
             inlineCtx.LastItem = linkInline.NextSibling is null;
             
-            inlineCtx.AddStyleTags("u", "color=#00DDFF");
+            styling.AddStyleTags("u", "color=#00DDFF");
             renderCtx.InlineParser.Parse(subInline, RectTransform, renderCtx, inlineCtx);
-            inlineCtx.RemoveStyleTags("u", "color=#00DDFF");
+            styling.RemoveStyleTags("u", "color=#00DDFF");
 
             Height = Mathf.Max(Height, inlineCtx.LineHeight);
             inlineCtx.LineHeight = 0;
@@ -114,7 +116,9 @@ public class LinkInlineObject : BaseMarkdownInlineObject
                 break;
         }
 
-        if (inlineCtx.XPos > 0 && inlineCtx.XPos + width >= renderCtx.ViewportRect.width)
+        var maxWidth = renderCtx.ViewportRect.width - (inlineCtx.FontSize / 2f);
+        
+        if (inlineCtx.XPos > 0 && inlineCtx.XPos + width >= maxWidth)
         {
             inlineCtx.YPos += inlineCtx.LineHeight;
             inlineCtx.XPos = 0;
@@ -122,7 +126,7 @@ public class LinkInlineObject : BaseMarkdownInlineObject
         }
         else if (inlineCtx.XPos == 0)
         {
-            width = Mathf.Min(renderCtx.ViewportRect.width - inlineCtx.XPos, width);
+            width = Mathf.Min(maxWidth - inlineCtx.XPos, width);
             height = width / aspectRatio;
 
             imageRt.anchoredPosition = new Vector2(inlineCtx.XPos, -inlineCtx.YPos);

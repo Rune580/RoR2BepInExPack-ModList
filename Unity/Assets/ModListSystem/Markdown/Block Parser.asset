@@ -45,3 +45,9 @@ MonoBehaviour:
   - blockType: 15
     prefab: {fileID: 5135084280662523739, guid: 80761e00efadc9fbbaec0a42ad10cd3a,
       type: 3}
+  - blockType: 25
+    prefab: {fileID: 5135084280662523739, guid: 0c9c9c57d84c37cc180bbf9671d48821,
+      type: 3}
+  - blockType: 32
+    prefab: {fileID: 5135084280662523739, guid: 673f29790bc68b76692fa07cb24d79c2,
+      type: 3}

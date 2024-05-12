@@ -13,7 +13,7 @@ public class TableObject : BaseMarkdownBlockObject
         if (block is not Table table)
             return;
         
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         var subCtx = new RenderContext(renderCtx) { YPos = 0, XPos = 0 };
 
@@ -96,5 +96,8 @@ public class TableObject : BaseMarkdownBlockObject
         LayoutRebuilder.ForceRebuildLayoutImmediate(RectTransform);
         
         renderCtx.YPos += Height;
+        
+        // Bottom padding
+        renderCtx.YPos += 16f;
     }
 }

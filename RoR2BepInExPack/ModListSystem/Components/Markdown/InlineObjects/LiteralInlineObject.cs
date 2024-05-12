@@ -48,15 +48,17 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
         
         AnchoredYPos = -inlineCtx.YPos;
 
-        var style = FontStyles.Normal;
+        var fontStyle = FontStyles.Normal;
 
-        if (inlineCtx.HasTag("b"))
-            style |= FontStyles.Bold;
-        if (inlineCtx.HasTag("i"))
-            style |= FontStyles.Italic;
+        var styling = inlineCtx.Styling;
+
+        if (styling.HasTag("b"))
+            fontStyle |= FontStyles.Bold;
+        if (styling.HasTag("i"))
+            fontStyle |= FontStyles.Italic;
 
         var wrapPerChar = this is CodeInlineObject;
-        var lineWidths = TextWidthMultiLine(text, style, emojis, inlineCtx, renderCtx.ViewportRect.width, wrapPerChar, out var textPerLine, out var positionedEmojis);
+        var lineWidths = TextWidthMultiLine(text, fontStyle, emojis, inlineCtx, renderCtx.ViewportRect.width, wrapPerChar, out var textPerLine, out var positionedEmojis);
         
         CreateEmojis(positionedEmojis, inlineCtx);
         
@@ -70,11 +72,11 @@ public class LiteralInlineObject : BaseMarkdownInlineObject
             
             if (i == 0)
             {
-                textPerLine[i] = $"<line-indent={inlineCtx.XPos}px>{inlineCtx.Styling.Replace("{0}", textPerLine[i])}</line-indent>";
+                textPerLine[i] = $"<line-indent={inlineCtx.XPos}px>{styling.StyledTemplate.Replace("{0}", textPerLine[i])}</line-indent>";
                 continue;
             }
             
-            textPerLine[i] = $"{inlineCtx.Styling.Replace("{0}", textPerLine[i])}";
+            textPerLine[i] = $"{styling.StyledTemplate.Replace("{0}", textPerLine[i])}";
         }
         
         label.SetText(string.Join("\n", textPerLine));

@@ -11,13 +11,8 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
         if (inline is not EmphasisInline emphasisInline)
             return;
 
-        var bold = emphasisInline.DelimiterChar == '*';
-        var italicize = emphasisInline.DelimiterChar == '_';
-
-        if (!bold && !italicize)
-        {
-            Debug.Log($"Unhandled Emphasis: {emphasisInline.DelimiterChar}");
-        }
+        var tag = GetTag(emphasisInline.DelimiterChar);
+        var styling = inlineCtx.Styling;
 
         var currentYPos = inlineCtx.YPos;
         
@@ -25,21 +20,31 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
         {
             inlineCtx.LastItem = emphasisInline.NextSibling is null && subInline.NextSibling is null;
             
-            if (bold)
-                inlineCtx.AddStyleTags("b");
-            else if (italicize)
-                inlineCtx.AddStyleTags("i");
+            styling.AddStyleTags(tag);
             
             renderCtx.InlineParser.Parse(subInline, RectTransform, renderCtx, inlineCtx);
 
-            if (bold)
-                inlineCtx.RemoveStyleTags("b");
-            else if (italicize)
-                inlineCtx.RemoveStyleTags("i");
+            styling.RemoveStyleTags(tag);
         }
 
         inlineCtx.LastItem = false;
 
         Height = inlineCtx.YPos - currentYPos;
+    }
+
+    private static string GetTag(char delimiterChar)
+    {
+        var tag = delimiterChar switch
+        {
+            '*' => "b",
+            '_' => "i",
+            '~' => "s",
+            _ =>  ""
+        };
+
+        if (string.IsNullOrEmpty(tag))
+            Debug.Log($"Unhandled Emphasis: {delimiterChar}");
+
+        return tag;
     }
 }

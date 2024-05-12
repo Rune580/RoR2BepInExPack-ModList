@@ -3,15 +3,12 @@ using Markdig.Syntax;
 using RoR2.UI;
 using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 
-public class AlertBlockObject : BaseMarkdownBlockObject
+public class AlertBlockObject : QuoteBlockObject
 {
     public HGTextMeshProUGUI blockLabel;
-    public Image blockLine;
-    public RectTransform content;
     
     public override void Parse(Block block, RenderContext renderCtx)
     {
@@ -21,7 +18,7 @@ public class AlertBlockObject : BaseMarkdownBlockObject
         if (block is not AlertBlock alertBlock)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         blockLabel.fontSize = renderCtx.FontSize * 1.25f;
 

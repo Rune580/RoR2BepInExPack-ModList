@@ -20,7 +20,7 @@ public class CodeBlockObject : BaseMarkdownBlockObject
         if (block is not CodeBlock codeBlock)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
         var codeLines = codeBlock.Lines.Lines;
         int emptyLines = 0;

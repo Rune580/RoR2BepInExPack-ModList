@@ -27,7 +27,7 @@ public class TableCellObject : BaseMarkdownBlockObject
         if (tableRow.Parent is not Table table)
             return;
         
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
         var subCtx = new RenderContext(renderCtx)
         {

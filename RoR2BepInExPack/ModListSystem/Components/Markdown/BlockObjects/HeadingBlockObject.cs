@@ -16,11 +16,12 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
         if (headingBlock.Inline is null)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
         
         var inlineCtx = new InlineContext
         {
-            FontSize = renderCtx.FontSize * (1 + (1f / headingBlock.Level))
+            FontSize = renderCtx.FontSize * (1 + (1f / headingBlock.Level)),
+            Styling = renderCtx.Styling
         };
 
         var currentYPos = renderCtx.YPos;
@@ -33,7 +34,7 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
 
         inlineCtx.LastItem = false;
 
-        renderCtx.YPos += inlineCtx.YPos + renderCtx.FontSize * 0.3f;;
+        renderCtx.YPos += inlineCtx.YPos + inlineCtx.LineHeight + renderCtx.FontSize * 0.3f;;
         
         Height += renderCtx.YPos - currentYPos;
         

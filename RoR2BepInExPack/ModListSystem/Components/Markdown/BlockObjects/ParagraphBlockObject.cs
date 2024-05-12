@@ -14,11 +14,12 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
         if (paragraphBlock.Inline is null)
             return;
 
-        RectTransform.anchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
+        AnchoredPosition = new Vector2(renderCtx.XPos, -renderCtx.YPos);
 
         var inlineCtx = new InlineContext
         {
-            FontSize = renderCtx.FontSize
+            FontSize = renderCtx.FontSize,
+            Styling = renderCtx.Styling
         };
 
         var currentYPos = renderCtx.YPos;
