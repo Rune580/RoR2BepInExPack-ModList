@@ -11,7 +11,7 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
         if (inline is not EmphasisInline emphasisInline)
             return;
 
-        var tag = GetTag(emphasisInline.DelimiterChar);
+        var tag = GetTag(emphasisInline.DelimiterChar, emphasisInline.DelimiterCount);
         var styling = inlineCtx.Styling;
 
         var currentYPos = inlineCtx.YPos;
@@ -32,13 +32,16 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
         Height = inlineCtx.YPos - currentYPos;
     }
 
-    private static string GetTag(char delimiterChar)
+    private static string GetTag(char delimiterChar, int count)
     {
         var tag = delimiterChar switch
         {
             '*' => "b",
             '_' => "i",
-            '~' => "s",
+            '~' => count == 2 ? "s" : "sub",
+            '^' => "sup",
+            '+' => "mark=#ffff0088",
+            '=' => "u",
             _ =>  ""
         };
 

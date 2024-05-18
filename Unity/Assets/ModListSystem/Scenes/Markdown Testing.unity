@@ -2469,7 +2469,7 @@ PrefabInstance:
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -2790,12 +2790,12 @@ PrefabInstance:
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -3003,26 +3003,25 @@ PrefabInstance:
         \nHuge thanks to Dr.Bibop and PureDark for the *full* VR implementation 
         \n[![](https://raw.githubusercontent.com/TheTimeSweeper/EnforcerMod/master/Release/readme/enforvr.png)]()\n\n####
         Guns\n - aimed with dominant hand\n#### Shield Bash\n - can be activated
-        by swinging shield-hand. \n - knocks enemies back based on your look direction\n
-        - sprint shield bash also faces your look direction\n#### Protect and Serve\n
-        - can be automatically activated by raising and lowering your shield\n  
-        - raising your shield is triggered by having your shield-hand in front of
-        you and raised\n   - lowering your shield is triggered when you point your
-        shield-hand downwards\n   - can be disabled in config\n\n___\n\n#### Hammer\n
-        - held with both hands\n - activated by swinging with motion controls\n####
-        Hammer uppercut\n - aimed with dominant hand\n#### Minigun\n - held and aimed
-        with both hands\n\n___\n\n## Known Issues \n- Cancelling shield with sprint
-        does not work properly in multiplayer\n\n___\n\n## Future Plans\n- More alternate
-        skill(s)\n  - perhaps new rorr skills\n    - if anyone would like to pr any
-        of those (or anything you want) to the repo you're free to do so\n- Skills++
-        support\n- animation pass\n- mention heavy tf2\n- Other things 100% decided
-        on pure whimsy\n- ~~Readding everything~~\n- Fixing this fucker\n- Help\n\n___\n\n##
-        Changelog\nFull changelog in changelog tab\n\n`3.8.2` \n- fix missing fr
-        translations (google translated)\n \n`3.8.1`  \n- added Russian translation
-        (thanks mark lecarde!)\n- added Japanesse translation (thanks punch!)\n-
-        added betterUI proc coefficients to translations\n- adjusted some textures
-        for lower texture scaling (if you want simpson enforcer back I'll put it
-        back)\n- moved changelog to CHANGELOG.md"
+        by swinging shield-hand. \n - knocks enemies back based on your look direction\n-
+        sprint shield bash also faces your look direction\n#### Protect and Serve\n-
+        can be automatically activated by raising and lowering your shield\n   -
+        raising your shield is triggered by having your shield-hand in front of you
+        and raised\n   - lowering your shield is triggered when you point your shield-hand
+        downwards\n   - can be disabled in config\n\n___\n\n#### Hammer\n- held with
+        both hands\n - activated by swinging with motion controls\n#### Hammer uppercut\n-
+        aimed with dominant hand\n#### Minigun\n - held and aimed with both hands\n\n___\n\n##
+        Known Issues \n- Cancelling shield with sprint does not work properly in
+        multiplayer\n\n___\n\n## Future Plans\n- More alternate skill(s)\n  - perhaps
+        new rorr skills\n    - if anyone would like to pr any of those (or anything
+        you want) to the repo you're free to do so\n- Skills++ support\n- animation
+        pass\n- mention heavy tf2\n- Other things 100% decided on pure whimsy\n-
+        ~~Readding everything~~\n- Fixing this fucker\n- Help\n\n___\n\n## Changelog\nFull
+        changelog in changelog tab\n\n`3.8.2` \n- fix missing fr translations (google
+        translated)\n \n`3.8.1`  \n- added Russian translation (thanks mark lecarde!)\n-
+        added Japanesse translation (thanks punch!)\n- added betterUI proc coefficients
+        to translations\n- adjusted some textures for lower texture scaling (if you
+        want simpson enforcer back I'll put it back)\n- moved changelog to CHANGELOG.md"
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}

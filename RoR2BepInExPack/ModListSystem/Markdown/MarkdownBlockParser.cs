@@ -4,6 +4,7 @@ using Markdig;
 using Markdig.Syntax;
 using RoR2BepInExPack.ModListSystem.Components;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
+using RoR2BepInExPack.ModListSystem.Markdown.UnityExt;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,7 @@ public class MarkdownBlockParser : ScriptableObject
             .UseAdvancedExtensions()
             .DisableHtml()
             .UseEmojiAndSmiley(false)
+            .Use<UnityExtensions>()
             .Build();
         
         var doc = Markdig.Markdown.Parse(MarkdownPreProcessor.PreProcess(markdown), pipeline);
@@ -144,6 +146,7 @@ public class MarkdownBlockParser : ScriptableObject
         LinkReferenceDefinition,
         ParagraphBlock,
         ThematicBreakBlock,
-        LeafBlock
+        LeafBlock,
+        DetailsBlock,
     }
 }

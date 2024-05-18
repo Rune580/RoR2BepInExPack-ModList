@@ -8,6 +8,10 @@
   </PropertyGroup>
     
   <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Unity.Analyzers" Version="*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,7 +22,7 @@
     </PackageReference>
 	<PackageReference Include="UnityEngine.Modules" Version="2019.4.26" />
 	<PackageReference Include="BepInEx.Core" Version="5.4.19" />
-    <PackageReference Include="RiskOfRain2.GameLibs" Version="*-*" />
+    <PackageReference Include="RiskOfRain2.GameLibs" Version="1.2.4-r.0" />
   </ItemGroup>
   
   <ItemGroup>
@@ -27,7 +31,10 @@
 
   <ItemGroup>
     <ThirdPartyDependencies Include="..\ThirdParty\*.dll" InProject="false" />
+    <ThirdPartyDependencies Remove="..\ThirdParty\Markdig.dll" InProject="false" />
+    
     <Reference Include="@(ThirdPartyDependencies)" />
+    <Reference Include="..\ThirdParty\Markdig.dll" Publicize="true" />
   </ItemGroup>
     
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
