@@ -2469,7 +2469,7 @@ PrefabInstance:
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -2790,12 +2790,12 @@ PrefabInstance:
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -2949,7 +2949,7 @@ PrefabInstance:
     - target: {fileID: 8826886450203026433, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -3186,12 +3186,12 @@ PrefabInstance:
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826886451364828150, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}
@@ -3341,6 +3341,67 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826886450203026435, guid: 7ddb7535300f70aa9b9a860e81f757fa,
+        type: 3}
+      propertyPath: markdownText
+      value: "# RiskOfOptions\n![Animated icon made by UnsavedTrash#0001 on discord](https://cdn.rune580.dev/roo/images/roo-full.gif)\n\n[![NuGet
+        Version](https://img.shields.io/nuget/v/Rune580.Mods.RiskOfRain2.RiskOfOptions?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/Rune580.Mods.RiskOfRain2.RiskOfOptions)\n[![Thunderstore
+        Version](https://img.shields.io/thunderstore/v/Rune580/Risk_Of_Options?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/riskofrain2/p/Rune580/Risk_Of_Options/)\n[![Thunderstore
+        Downloads](https://img.shields.io/thunderstore/dt/Rune580/Risk_Of_Options?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/riskofrain2/p/Rune580/Risk_Of_Options/)\n[![GitHub
+        Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Rune580/RiskOfOptions/build.yml?branch=master&style=for-the-badge&logo=github)](https://github.com/Rune580/RiskOfOptions/actions/workflows/build.yml)\n\nAn
+        API to provide a user interface in game to interact with BepInEx ConfigEntry's.\n\n##
+        Currently supported options\n- CheckBoxes `bool`\n- Sliders `float`\n- StepSliders
+        `float`\n- IntSliders `int`\n- KeyBinds `KeyboardShortcut`\n- String Input
+        Fields `string`\n- Choice DropDowns `Enum`\n- Color Picker `UnityEngine.Color`\n\n###
+        Additional Components\n- GenericButtons\n\n### For feature requests or issues
+        head over to my [repository](https://github.com/Rune580/RiskOfOptions).\n\n##
+        Developer Resources\n* [RiskOfOptions Wiki](https://github.com/Rune580/RiskOfOptions/wiki)\n*
+        [Usage Example](https://github.com/Rune580/RiskOfOptions-Example)\n\n## Getting
+        Started\nFirst you need to grab the latest release from the [Thunderstore](https://thunderstore.io/package/Rune580/Risk_Of_Options/).\nExtract
+        the mod to your plugins folder, and then add a reference to the dll in your
+        project in Visual Studio. [Project->Add Reference...->Browse]\n\nThen add
+        to where ever you will use this.\n```C#\nusing RiskOfOptions;\n```\n\nNext
+        you need to add Risk Of Options as a dependency for your mod.\n```C#\n[BepInDependency(\"com.rune580.riskofoptions\")]\n```\n\nFinally
+        make sure you know how to use [BepInEx Config](https://github.com/risk-of-thunder/R2Wiki/wiki/Configuration\n)\n\nNow
+        you're ready to start adding options.\n\n### Adding an option\nGiven a `ConfigEntry<bool>`\n```C#\nConfigEntry<bool>
+        enableThing = Config.Bind(...);\n\nModSettingsManager.AddOption(new CheckBoxOption(enableThing);\n```\n\nNeed
+        a volume slider?\n```C#\nConfigEntry<float> volume = Config.Bind(...);\n\nModSettingsManager.AddOption(new
+        SliderOption(volume));\n```\n\nEvery option constructor can take a Config
+        for the example above it would be `SliderConfig`.\nSay you need a slider
+        that only goes between 60 - 130. You would do:\n```C#\nModSettingsManager.AddOption(new
+        SliderOption(limitedRangeFloat, new SliderConfig() { min = 60, max = 130
+        }));\n```\n\nWhat about a slider that goes in increments of 0.15 and is limited
+        between 1 - 5?\n```C#\nModSettingsManager.AddOption(new StepSliderOption(incrementedFloat,
+        new StepSliderConfig() { min = 1, max = 5, increment = 0.15f }));\n```\n\nEnough
+        about floats, let's talk about the spaghetti and meatballs, KeyBinds.\n```C#\nConfigEntry<KeyboardShortcut>
+        keyBind = Config.Bind(...);\n\nModSettingsManager.AddOption(new KeyBindOption(keyBind));
+        // This also has a KeyBindConfig but can be omitted if defaults are desired.\n```\nAnd
+        that's it, said KeyboardShortcut will show up on the ModOptions menu.\n\nCheckbox
+        and Slider configs can be set with a delegate that will be used to check
+        if said option should be disabled in the menu.\n```C#\nConfigEntry<bool>
+        disableThing = Config.Bind(...);\nConfigEntry<bool> overridenThing = Config.Bind(...);
+        \n\nModSettingsManager.AddOption(new CheckBoxOption(disableThing));\nModSettingsManager.AddOption(new
+        CheckBoxOption(overridenThing, new CheckBoxConfig() { checkIfDisabled = Check
+        }));\n\n...\n\nprivate bool Check()\n{\n    return disabledThing.value;\n}\n```\nWhen
+        `disableThing` is enabled `overridenThing` will show up as non-interactable
+        in the menu.\n\n\"Okay that's all fine but how do I, you know, do stuff when
+        an value is changed?\"\nWell thankfully `ConfigEntry`'s have this innately:\n```C#\nConfigEntry<bool>
+        toggleThing = Config.Bind(...);\n\ntoggleThing.SettingChanged += (object,
+        args) => { Debug.Log(toggleThing.Value) };\n```\nOf course when an option
+        changes the value of a passed `ConfigEntry`, the value updates in real time,\nso
+        in some cases where you are checking the value of the entry directly you
+        don't need to do anything.\n\nThere may be cases where you just want a convenient
+        button to open your own menu, as such you can do this:\n```C#\nModSettingsManager.AddOption(new
+        GenericButtonOption(\"Custom Menu\", \"Misc\", \"Configure stuff in here\",
+        \"Open Custom Menu\", OpenMenu));\n\nprivate void OpenMenu()\n{\n    ///
+        Do stuff\n}\n```\nThe GenericButtonOption may be used to provide an entry
+        point for opening your custom GUI's.\n\n### Setting the description of the
+        mod\n```C#\nModSettingsManager.SetModDescription(\"Describe your mod in incredible
+        detail over the course of the next 2 hours\");\n```\n\n### Setting the icon
+        of the mod\n```C#\nSprite icon = ...;\n\nModSettingsManager.SetModIcon(icon);\n```\n\n#
+        Quick Showcase\n[Showcase](https://gfycat.com/GloomyShowyArrowana)\n\n# Contact\n\nDiscord:
+        @rune\n\nGithub: Rune580"
       objectReference: {fileID: 0}
     - target: {fileID: 8826886450293359646, guid: 7ddb7535300f70aa9b9a860e81f757fa,
         type: 3}

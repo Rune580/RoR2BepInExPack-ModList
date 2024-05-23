@@ -1,3 +1,5 @@
+using System;
+using Markdig.Helpers;
 using Markdig.Parsers;
 using Markdig.Syntax;
 using RoR2BepInExPack.ModListSystem.Markdown.UnityExt.Syntax;
@@ -17,7 +19,34 @@ public class DetailsBlockParser : BlockParser
 
         if (result == BlockState.Continue)
         {
-            result = MatchEnd(processor, (DetailsBlock)processor.NewBlocks.Peek());
+            var line = processor.Line;
+            
+            var text = line.Text.Substring(line.Start, line.Length);
+            text = text.Replace("<<<NEWLINE>>>", "\n")
+                .Replace("<<<LINEFEED>>>", "\r");
+
+            var detailsLine = new StringSlice(text)
+            {
+                NewLine = line.NewLine
+            };
+
+            var lastEnd = 0;
+            var lineIndex = 0;
+            var detailsBlock = (DetailsBlock)processor.NewBlocks.Peek();
+            
+            foreach (var textLine in text.Split('\n', '\r'))
+            {
+                detailsLine.Start = detailsLine.Text.IndexOf(textLine, lastEnd, StringComparison.InvariantCulture);
+                detailsLine.End = detailsLine.Start + textLine.Length - 1;
+                
+                processor.Line = detailsLine;
+                result = MatchEnd(processor, detailsBlock, 0, lineIndex);
+
+                lastEnd = detailsLine.End + 1;
+                lineIndex++;
+            }
+
+            processor.Line = line;
         }
 
         return result;
@@ -28,11 +57,17 @@ public class DetailsBlockParser : BlockParser
         if (block is not DetailsBlock detailsBlock)
             return BlockState.None;
 
-        return MatchEnd(processor, detailsBlock);
+        return MatchEnd(processor, detailsBlock, processor.Column, processor.LineIndex);
     }
 
     public override bool Close(BlockProcessor processor, Block block)
     {
+        if (block is not DetailsBlock detailsBlock)
+            return false;
+
+        if (string.IsNullOrEmpty(detailsBlock.SummaryMarkdown))
+            detailsBlock.SummaryMarkdown = "Details";
+        
         return true;
     }
 
@@ -43,8 +78,6 @@ public class DetailsBlockParser : BlockParser
 
         var line = processor.Line;
         var startPos = processor.Start;
-        
-        
         
         line.SkipChar();
 
@@ -64,26 +97,16 @@ public class DetailsBlockParser : BlockParser
             detailsBlock.LinesBefore = processor.UseLinesBefore();
             detailsBlock.NewLine = processor.Line.NewLine;
         }
-
-        startPos += "<details>".Length;
-
-        var span = new SourceSpan(startPos, startPos + line.End);
-        var content = CreateParagraphBlock(processor, span);
-        processor.Open(content);
-        content.IsOpen = true;
         
-        detailsBlock.Add(content);
-        
-        processor.NewBlocks.Push(content);
-
         var state = new DetailsBlockState();
         detailsBlock.SetData(typeof(DetailsBlockState), state);
         
         processor.NewBlocks.Push(detailsBlock);
+        
         return BlockState.Continue;
     }
 
-    private BlockState MatchEnd(BlockProcessor processor, DetailsBlock detailsBlock)
+    private BlockState MatchEnd(BlockProcessor processor, DetailsBlock detailsBlock, int column, int lineIndex)
     {
         var data = detailsBlock.GetData(typeof(DetailsBlockState));
         if (data is not DetailsBlockState state)
@@ -91,7 +114,7 @@ public class DetailsBlockParser : BlockParser
 
         var result = BlockState.Continue;
         
-        processor.GoToColumn(processor.ColumnBeforeIndent);
+        // processor.GoToColumn(processor.ColumnBeforeIndent);
         
         var line = processor.Line;
         var startPos = line.Start;
@@ -104,34 +127,24 @@ public class DetailsBlockParser : BlockParser
 
             startPos = endSummaryPos;
         }
+        
+        var index = line.IndexOf("</details>");
 
-        var content = (ParagraphBlock)detailsBlock[0];
+        line.Start = startPos;
 
-        do
+        if (index >= 0)
         {
-            var index = line.IndexOf("</details>");
+            line.End = index - 1;
+            detailsBlock.AddContentLine(line.ToString());
 
-            line.Start = startPos;
-
-            if (index >= 0)
-            {
-                line.End = index - 1;
-                content.AppendLine(ref line, processor.Column, processor.LineIndex, startPos, processor.TrackTrivia);
-                content.UpdateSpanEnd(index);
-
-                processor.Close(content);
-                content.IsOpen = false;
-
-                detailsBlock.UpdateSpanEnd(index + "</details>".Length);
-                result = BlockState.BreakDiscard;
-            }
-            else
-            {
-                if (line.Start < line.End && !string.IsNullOrEmpty(line.ToString()))
-                    content.AppendLine(ref line, processor.Column, processor.LineIndex, startPos,
-                        processor.TrackTrivia);
-            }
-        } while (line.NextLine());
+            detailsBlock.UpdateSpanEnd(index + "</details>".Length);
+            result = BlockState.BreakDiscard;
+        }
+        else
+        {
+            if (line.Start < line.End && !string.IsNullOrEmpty(line.ToString()))
+                detailsBlock.AddContentLine(line.ToString());
+        }
 
         detailsBlock.Span.End = line.End;
         detailsBlock.NewLine = processor.Line.NewLine;
@@ -143,72 +156,44 @@ public class DetailsBlockParser : BlockParser
     {
         endPos = -1;
         
-        if (detailsBlock.SummaryContainer is not null && state.SummaryHasEnd)
+        if (!string.IsNullOrEmpty(detailsBlock.SummaryMarkdown) && state.SummaryHasEnd)
             return false;
         
         var line = processor.Line;
         var openPos = line.IndexOf("<summary>");
 
-        if (detailsBlock.SummaryContainer is null)
+        if (string.IsNullOrEmpty(detailsBlock.SummaryMarkdown))
         {
             if (openPos < 0)
                 return false;
             
             var startPos = openPos + "<summary>".Length;
-            var span = new SourceSpan(startPos, startPos + line.End);
             
             line.Start = startPos;
+
+            detailsBlock.SummaryMarkdown = "";
+        }
+
+        var closePos = line.IndexOf("</summary>");
+        
+        if (closePos >= 0)
+        {
+            line.End = closePos - 1;
             
-            var summaryBlock = CreateParagraphBlock(processor, span, detailsBlock);
-            detailsBlock.SummaryContainer = summaryBlock;
-            processor.Open(detailsBlock.SummaryContainer!);
-            detailsBlock.SummaryContainer.IsOpen = true;
+            detailsBlock.AddSummaryLine(line.ToString());
+            
+            endPos = closePos + "</summary>".Length;
+
+            state.SummaryHasEnd = true;
+            detailsBlock.SetData(typeof(DetailsBlockState), state);
+            
+            return true;
         }
         
-        do
-        {
-            var summary = (ParagraphBlock)detailsBlock.SummaryContainer;
-
-            var closePos = line.IndexOf("</summary>");
-        
-            if (closePos >= 0)
-            {
-                line.End = closePos - 1;
-                summary.AppendLine(ref line, processor.Column, processor.LineIndex, line.Start, processor.TrackTrivia);
-            
-                endPos = closePos + "</summary>".Length;
-            
-                detailsBlock.SummaryContainer.UpdateSpanEnd(closePos);
-                state.SummaryHasEnd = true;
-            
-                processor.Close(detailsBlock.SummaryContainer);
-                detailsBlock.SummaryContainer.IsOpen = false;
-                
-                break;
-            }
-            summary.AppendLine(ref line, processor.Column, processor.LineIndex, line.Start, processor.TrackTrivia);
-        } while (line.NextLine());
+        detailsBlock.AddSummaryLine(line.ToString());
         
         detailsBlock.SetData(typeof(DetailsBlockState), state);
-
-        return true;
-    }
-
-    private ParagraphBlock CreateParagraphBlock(BlockProcessor processor, SourceSpan span, DetailsBlock detailsBlock = null)
-    {
-        var parser = processor.Parsers.FindExact<ParagraphBlockParser>();
         
-        var block = new ParagraphBlock(parser)
-        {
-            ProcessInlines = true,
-            Column = processor.Column,
-            Span = span,
-            Lines = []
-        };
-
-        if (detailsBlock != null)
-            block.Parent = detailsBlock;
-
-        return block;
+        return false;
     }
 }

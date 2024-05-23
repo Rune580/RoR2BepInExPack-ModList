@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using RoR2BepInExPack.ModListSystem.Markdown;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,7 +17,9 @@ public class MarkdownConverter : UIBehaviour
     public string markdownText;
 
     [SerializeField, HideInInspector]
-    private GameObject[] _contentObjects = [];
+    private BaseMarkdownBlockObject[] _contentBlockObjects = [];
+
+    private IEnumerator _parseCoroutine;
 
     public override void Awake()
     {
@@ -26,9 +31,24 @@ public class MarkdownConverter : UIBehaviour
         if (!isActiveAndEnabled)
             return;
 
+        if (_parseCoroutine is not null)
+        {
+            StopCoroutine(_parseCoroutine);
+            _parseCoroutine = null;
+        }
+        
         ClearContent();
         
-        _contentObjects = markdownBlockParser.Parse(markdownText, content);
+        _parseCoroutine = markdownBlockParser.Parse(markdownText, content, OnBlockObjectCreated);
+        StartCoroutine(_parseCoroutine);
+    }
+
+    private void OnBlockObjectCreated(BaseMarkdownBlockObject blockObject)
+    {
+        var index = _contentBlockObjects.Length;
+        Array.Resize(ref _contentBlockObjects, index + 1);
+
+        _contentBlockObjects[index] = blockObject;
     }
 
     public override void OnDisable()
@@ -43,10 +63,10 @@ public class MarkdownConverter : UIBehaviour
         if (!content)
             return;
 
-        foreach (var contentObject in _contentObjects)
-            DestroyImmediate(contentObject);
+        foreach (var contentObject in _contentBlockObjects)
+            DestroyImmediate(contentObject.gameObject);
 
-        _contentObjects = [];
+        _contentBlockObjects = [];
 
         var contentSize = content.sizeDelta;
         contentSize.y = 0;

@@ -27,7 +27,7 @@ public class ParagraphBlockObject : BaseMarkdownBlockObject
         foreach (var inline in paragraphBlock.Inline)
         {
             inlineCtx.LastItem = inline.NextSibling is null;
-            renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
+            renderCtx.InlineParser.Parse(inline, RectTransform, this, renderCtx, inlineCtx);
         }
         
         renderCtx.YPos += inlineCtx.YPos + inlineCtx.LineHeight;

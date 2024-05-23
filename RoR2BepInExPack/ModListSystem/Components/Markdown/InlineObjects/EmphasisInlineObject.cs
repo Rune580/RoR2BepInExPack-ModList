@@ -15,6 +15,8 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
         var styling = inlineCtx.Styling;
 
         var currentYPos = inlineCtx.YPos;
+
+        BaseMarkdownInlineObject lastInline = null;
         
         foreach (var subInline in emphasisInline)
         {
@@ -22,9 +24,14 @@ public class EmphasisInlineObject : BaseMarkdownInlineObject
             
             styling.AddStyleTags(tag);
             
-            renderCtx.InlineParser.Parse(subInline, RectTransform, renderCtx, inlineCtx);
+            var instance = renderCtx.InlineParser.Parse(subInline, RectTransform, this.ParentBlock, renderCtx, inlineCtx);
+            
+            if (lastInline)
+                lastInline.NextSibling = instance;
 
             styling.RemoveStyleTags(tag);
+            
+            lastInline = instance;
         }
 
         inlineCtx.LastItem = false;

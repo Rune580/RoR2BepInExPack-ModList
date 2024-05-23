@@ -100,4 +100,7 @@ public class TableObject : BaseMarkdownBlockObject
         // Bottom padding
         renderCtx.YPos += 16f;
     }
+
+    public override float minHeight => Height;
+    public override float preferredHeight => Height;
 }

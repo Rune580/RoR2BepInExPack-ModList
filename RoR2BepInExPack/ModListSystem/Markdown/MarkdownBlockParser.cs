@@ -1,8 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Markdig;
 using Markdig.Syntax;
-using RoR2BepInExPack.ModListSystem.Components;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using RoR2BepInExPack.ModListSystem.Markdown.UnityExt;
 using UnityEngine;
@@ -24,9 +24,9 @@ public class MarkdownBlockParser : ScriptableObject
 
     private readonly Dictionary<BlockType, GameObject> _converterLut = new();
     
-    public GameObject[] Parse(string markdown, RectTransform target)
+    public IEnumerator Parse(string markdown, RectTransform target, Action<BaseMarkdownBlockObject> blockObjectCreatedCallback = null)
     {
-        var blockObjects = new List<GameObject>();
+        var blockObjects = new List<BaseMarkdownBlockObject>();
 
         var pipeline = new MarkdownPipelineBuilder()
             .UseAdvancedExtensions()
@@ -48,20 +48,26 @@ public class MarkdownBlockParser : ScriptableObject
             YPos = 0f
         };
 
+        BaseMarkdownBlockObject lastBlock = null;
+
         foreach (var block in doc)
         {
             var instance = Parse(block, target, renderCtx);
             if (!instance)
                 continue;
+
+            if (lastBlock)
+                lastBlock.NextSibling = instance;
             
-            blockObjects.Add(instance.gameObject);
+            lastBlock = instance;
+            
+            blockObjectCreatedCallback?.Invoke(instance);
+            yield return null;
         }
 
         var contentSize = target.sizeDelta;
         contentSize.y = renderCtx.YPos;
         target.sizeDelta = contentSize;
-
-        return blockObjects.ToArray();
     }
     
     public BaseMarkdownBlockObject Parse(Block block, RectTransform target, RenderContext renderCtx)
@@ -81,7 +87,8 @@ public class MarkdownBlockParser : ScriptableObject
         var blockObject = instance.GetComponent<BaseMarkdownBlockObject>();
         if (!blockObject)
             return null;
-            
+        
+        blockObject.PreParse(block, renderCtx);
         blockObject.Parse(block, renderCtx);
 
         return blockObject;

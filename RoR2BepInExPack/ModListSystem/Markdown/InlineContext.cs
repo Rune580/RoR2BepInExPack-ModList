@@ -19,6 +19,19 @@ public class InlineContext
 
     public TextStyling Styling;
     
+    public InlineContext() { }
+
+    public InlineContext(InlineContext other)
+    {
+        this.FontSize = other.FontSize;
+        this.XPos = other.XPos;
+        this.YPos = other.YPos;
+        this.LastItem = other.LastItem;
+        this.LineHeight = other.LineHeight;
+        this.PreferredWidth = other.PreferredWidth;
+        this.Styling = other.Styling;
+    }
+    
     public void SetLineHeightIfBigger(float lineHeight) => LineHeight = Mathf.Max(LineHeight, lineHeight);
     
     public void SetPreferredWidthIfBigger(float preferredWidth) => PreferredWidth = Mathf.Max(PreferredWidth, preferredWidth);

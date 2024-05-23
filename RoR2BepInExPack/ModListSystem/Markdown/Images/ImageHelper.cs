@@ -1,14 +1,18 @@
 using System;
+using System.Collections;
 using System.IO;
-using System.Threading;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
-using UnityEngine.Networking;
+// using UnityEngine.Networking;
 
 namespace RoR2BepInExPack.ModListSystem.Markdown.Images;
 
 internal static class ImageHelper
 {
+    private static readonly HttpClient Client = new();
     private static ImageCache _cacheInstance;
 
     private static ImageCache GetImageCache()
@@ -77,20 +81,27 @@ internal static class ImageHelper
         return true;
     }
     
-    public static BaseImage GetImage(string url)
+    public static IEnumerator GetImage(string url, Action<BaseImage> getImageCallback)
     {
         var cache = GetImageCache();
-        
-        if (cache.TryGetImageEntry(url, out var imageEntry))
-            return CreateImage(imageEntry.FullPath, imageEntry.ImageType);
-        
-        var request = UnityWebRequest.Get(url);
-        
-        request.SendWebRequest();
-        while (!request.isDone)
-            Thread.Sleep(100);
 
-        var imageType = DetermineImageTypeFromHeader(request.downloadHandler);
+        if (cache.TryGetImageEntry(url, out var imageEntry))
+        {
+            getImageCallback.Invoke(CreateImage(imageEntry.FullPath, imageEntry.ImageType));
+            yield break;
+        }
+
+        var getImageBytesTask = Task.Run(async () => await GetImageBytesHttp(url));
+        yield return new WaitUntil(() => getImageBytesTask.IsCompleted);
+
+        var imageBytes = getImageBytesTask.Result;
+        if (imageBytes is null)
+        {
+            getImageCallback.Invoke(null);
+            yield break;
+        }
+        
+        var imageType = DetermineImageTypeFromHeader(imageBytes);
 
         var fileName = Guid.NewGuid().ToString();
         
@@ -102,34 +113,25 @@ internal static class ImageHelper
             case ImageType.Svg:
                 using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.svg", imageType))
                 {
-                    var bytes = request.downloadHandler.data;
-                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Write(imageBytes, 0, imageBytes.Length);
                 }
-                // using (var svg = SKSvg.CreateFromSvg(text))
-                // {
-                //     using var fs = cache.AddAndOpenWrite(url, $"{fileName}.png", imageType);
-                //     svg.Save(fs, SKColor.Empty);
-                // }
                 break;
             case ImageType.Png:
                 using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.png", imageType))
                 {
-                    var bytes = request.downloadHandler.data;
-                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Write(imageBytes, 0, imageBytes.Length);
                 }
                 break;
             case ImageType.Jpeg:
                 using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.jpeg", imageType))
                 {
-                    var bytes = request.downloadHandler.data;
-                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Write(imageBytes, 0, imageBytes.Length);
                 }
                 break;
             case ImageType.Gif:
                 using (var fs = cache.AddAndOpenWrite(url, $"{fileName}.gif", imageType))
                 {
-                    var bytes = request.downloadHandler.data;
-                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Write(imageBytes, 0, imageBytes.Length);
                 }
                 break;
             default:
@@ -137,11 +139,24 @@ internal static class ImageHelper
         }
         
         SaveCache();
-        
+
         if (cache.TryGetImageEntry(url, out imageEntry))
-            return CreateImage(imageEntry.FullPath, imageEntry.ImageType);
+        {
+            getImageCallback.Invoke(CreateImage(imageEntry.FullPath, imageEntry.ImageType));
+            yield break;
+        }
         
-        return null;
+        getImageCallback.Invoke(null);
+    }
+
+    private static async Task<byte[]> GetImageBytesHttp(string url)
+    {
+        using var response = await Client.GetAsync(url);
+
+        if (!response.IsSuccessStatusCode)
+            return null;
+        
+        return await response.Content.ReadAsByteArrayAsync();
     }
 
     private static BaseImage CreateImage(string imagePath, ImageType imageType)
@@ -161,18 +176,21 @@ internal static class ImageHelper
         return new StaticImage(imagePath);
     }
 
-    private static ImageType DetermineImageTypeFromHeader(DownloadHandler handler)
+    private static ImageType DetermineImageTypeFromHeader(byte[] buffer)
     {
+        var textBuf = new byte[Mathf.Min(buffer.Length, 4)];
+        Array.Copy(buffer, textBuf, textBuf.Length);
+
+        var textContent = Encoding.UTF8.GetString(textBuf);
+        
         // Try and detect SVG first.
-        if (handler.text.TrimStart().StartsWith("<svg"))
+        if (textContent.TrimStart().StartsWith("<svg"))
             return ImageType.Svg;
 
-        var bytes = handler.data;
-
-        if (bytes.Length < ImageHeaderInspector.MaxHeaderLength) // Verify that the data is longer than the longest header we support (jpeg)
+        if (buffer.Length < ImageHeaderInspector.MaxHeaderLength) // Verify that the data is longer than the longest header we support (jpeg)
             return ImageType.Unknown;
 
-        var imageInspector = new ImageHeaderInspector(bytes);
+        var imageInspector = new ImageHeaderInspector(buffer);
 
         // PNG files always have these 8 bytes at the start
         // http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html

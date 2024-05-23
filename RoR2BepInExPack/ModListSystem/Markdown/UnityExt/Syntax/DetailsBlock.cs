@@ -4,14 +4,31 @@ using Markdig.Syntax;
 
 namespace RoR2BepInExPack.ModListSystem.Markdown.UnityExt.Syntax;
 
-public class DetailsBlock : ContainerBlock
+public class DetailsBlock : Block
 {
     [CanBeNull]
-    public Block SummaryContainer { get; set; }
+    public string SummaryMarkdown { get; set; }
+    
+    public string ContentMarkdown { get; set; }
     
     public DetailsBlock([CanBeNull] BlockParser parser) : base(parser)
     {
-        IsParagraphBlock = true;
-        
+        ContentMarkdown = "";
+    }
+    
+    public void AddSummaryLine(string line)
+    {
+        if (!string.IsNullOrEmpty(SummaryMarkdown))
+            SummaryMarkdown += "\n";
+
+        SummaryMarkdown += line;
+    }
+
+    public void AddContentLine(string line)
+    {
+        if (!string.IsNullOrEmpty(ContentMarkdown))
+            ContentMarkdown += "\n";
+
+        ContentMarkdown += line;
     }
 }

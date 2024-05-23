@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Text.RegularExpressions;
 using Markdig.Syntax.Inlines;
 using RoR2BepInExPack.ModListSystem.Markdown;
@@ -17,6 +17,7 @@ public class LinkInlineObject : BaseMarkdownInlineObject
     public AnimatedImageController animatedImageController;
     public VectorImageController vectorImageController;
 
+    private bool _imageLoaded;
     private string _url;
     private BaseImage _cachedImage;
     
@@ -38,17 +39,13 @@ public class LinkInlineObject : BaseMarkdownInlineObject
             linkButton.enabled = false;
         }
 
-        var handledImage = false;
-        if (linkInline.IsImage)
+        if (linkInline.IsImage && _cachedImage is null && !_imageLoaded)
         {
-            try
-            {
-                handledImage = HandleImage(linkInline, renderCtx, inlineCtx);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-            }
+            StartCoroutine(LoadImage(linkInline));
+        }
+        else if (linkInline.IsImage && _imageLoaded && _cachedImage is not null)
+        {
+            HandleImage(renderCtx, inlineCtx);
         }
         else
         {
@@ -59,13 +56,13 @@ public class LinkInlineObject : BaseMarkdownInlineObject
 
         foreach (var subInline in linkInline)
         {
-            if (subInline is LiteralInline && linkInline.IsImage && handledImage)
+            if (subInline is LiteralInline && linkInline.IsImage && _imageLoaded)
                 continue;
             
             inlineCtx.LastItem = linkInline.NextSibling is null;
             
             styling.AddStyleTags("u", "color=#00DDFF");
-            renderCtx.InlineParser.Parse(subInline, RectTransform, renderCtx, inlineCtx);
+            renderCtx.InlineParser.Parse(subInline, RectTransform, this.ParentBlock, renderCtx, inlineCtx);
             styling.RemoveStyleTags("u", "color=#00DDFF");
 
             Height = Mathf.Max(Height, inlineCtx.LineHeight);
@@ -75,13 +72,22 @@ public class LinkInlineObject : BaseMarkdownInlineObject
         inlineCtx.LastItem = false;
     }
 
-    private bool HandleImage(LinkInline linkInline, RenderContext renderCtx, InlineContext inlineCtx)
+    private IEnumerator LoadImage(LinkInline linkInline)
     {
-        _cachedImage = ImageHelper.GetImage(linkInline.Url);
+        yield return ImageHelper.GetImage(linkInline.Url, loadedImage =>
+        {
+            _cachedImage = loadedImage;
+            _imageLoaded = true;
+            
+            Rebuild();
+        });
+    }
 
+    private void HandleImage(RenderContext renderCtx, InlineContext inlineCtx)
+    {
         if (_cachedImage is null)
-            return false;
-
+            return;
+        
         var texture = _cachedImage.Texture;
 
         float width = _cachedImage.Width;
@@ -150,10 +156,8 @@ public class LinkInlineObject : BaseMarkdownInlineObject
             inlineCtx.YPos += inlineCtx.LineHeight;
             inlineCtx.LineHeight = 0;
         }
-
-        return true;
     }
-
+    
     public void OpenUrl()
     {
         if (string.IsNullOrEmpty(_url))

@@ -29,7 +29,7 @@ public class HeadingBlockObject : BaseMarkdownBlockObject
         foreach (var inline in headingBlock.Inline)
         {
             inlineCtx.LastItem = inline.NextSibling is null;
-            renderCtx.InlineParser.Parse(inline, RectTransform, renderCtx, inlineCtx);
+            renderCtx.InlineParser.Parse(inline, RectTransform, this, renderCtx, inlineCtx);
         }
 
         inlineCtx.LastItem = false;

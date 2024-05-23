@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Markdig.Syntax.Inlines;
+using RoR2BepInExPack.ModListSystem.Components.Markdown.BlockObjects;
 using RoR2BepInExPack.ModListSystem.Components.Markdown.InlineObjects;
 using UnityEngine;
 
@@ -15,25 +16,29 @@ public class MarkdownInlineParser : ScriptableObject
     
     private readonly Dictionary<InlineType, GameObject> _converterLut = new();
     
-    public void Parse(Inline inline, RectTransform target, RenderContext renderCtx, InlineContext inlineCtx)
+    public BaseMarkdownInlineObject Parse(Inline inline, RectTransform target, BaseMarkdownBlockObject parent, RenderContext renderCtx, InlineContext inlineCtx)
     {
         if (!Enum.TryParse<InlineType>(inline.GetType().Name, out var inlineType))
         {
             Debug.LogWarning($"Could not parse markdown inline {inline.GetType()}!");
-            return;
+            return null;
         }
         
         var prefab = GetPrefab(inlineType);
         if (!prefab)
-            return;
+            return null;
         
         var instance = Instantiate(prefab, target);
 
-        var inlineParser = instance.GetComponent<BaseMarkdownInlineObject>();
-        if (!inlineParser)
-            return;
+        var inlineObject = instance.GetComponent<BaseMarkdownInlineObject>();
+        if (!inlineObject)
+            return null;
+
+        inlineObject.ParentBlock = parent;
+        inlineObject.PreParse(inline, renderCtx, inlineCtx);
+        inlineObject.Parse(inline, renderCtx, inlineCtx);
         
-        inlineParser.Parse(inline, renderCtx, inlineCtx);
+        return inlineObject;
     }
     
     private GameObject GetPrefab(InlineType inlineType)
